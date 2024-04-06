@@ -1,42 +1,46 @@
 import React, { useState } from "react";
-import { View, Button, PermissionsAndroid, Pressable } from "react-native";
+import { View, Button, PermissionsAndroid, Pressable, Alert } from "react-native";
 
-import { Card, Text, Divider, Badge, Alert } from "@rneui/themed";
+import { Card, Text, Divider, Badge } from "@rneui/themed";
 
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
-
+import { requestCameraPermission, requestLocationPermission } from "../helper/permissions";
 import Icon from "react-native-vector-icons/Feather";
 import ImagePicker from "react-native-image-crop-picker";
 import RNFetchBlob from "rn-fetch-blob";
 import Exif from "react-native-exif";
 var RNFS = require("react-native-fs");
 
-const Camera = () => {
-  const openCamera2 = () => {
+// const Camera = () => {
+
+
+  const browseGallery = () => {
     ImagePicker.openPicker({ includeBase64: true }).then((res) => {
-      console.log("pagol==>", res.data);
       console.log("fileName==>", res.path);
       const splittedArray = res.path.split("/");
       const fileName = splittedArray[splittedArray.length - 1];
-      // console.log("fileNamefff", fileName);
-      console.log("mime", res.mime);
-      // return;
-
       saveImage(res.data, fileName, res.mime);
     });
   };
 
 
+  const handleOpenCamera=()=>{
+    requestCameraPermission().then((res)=>{
+      console.log("camera permission check", res);
+      if(res === false){
+        Alert.alert('Permission Required', 'Please enable Camera Permission ', [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+          },
+        ]);
+      }
+      else{
+        openCamera();
+      }
+    })
+  }
 
-const camera2 =()=>{
-  ImagePicker.openCamera({
-    includeBase64: true,
-    includeExif: true
-
-  }).then(image => {
-    console.log(image);
-  });
-}
 
  const openCamera = () => {
     let options = {
@@ -46,19 +50,8 @@ const camera2 =()=>{
       includeExtra: true,
     };
     launchCamera(options, (response) => {
-      console.log("response=>", response);
-      console.log("response.path=>", response.assets[0].originalPath);
-      console.log("response.fileName=>", response.assets[0].fileName);
-      console.log("base64=>", response.assets[0].base64);
-      var decodedURL = decodeURIComponent(response.assets[0].originalPath);
       var fileName = response.assets[0].fileName;
-
-      var filePath = RNFS.DocumentDirectoryPath + fileName;
-      var destPath = RNFS.ExternalStorageDirectoryPath + "/Pictures";
       var mime = response.assets[0].type;
-
-      console.log("filePath==>>", filePath);
-      console.log("destPathpp==>>", destPath);
       console.log("mime==>>", response.assets[0].type);
 
       saveImage(response.assets[0].base64, fileName, mime);
@@ -97,9 +90,6 @@ const camera2 =()=>{
 
         getExifInfo(filePath);
 
-        // return;
-
-        // [{ path: res.path(), mime: "audio/mpeg" }]
         RNFetchBlob.fs
           .scanFile([{ path: filePath, mime: mime }])
           .then((res) => {
@@ -115,72 +105,39 @@ const camera2 =()=>{
     console.log("exif=>", image);
     Exif.getExif(image).then((msg) => {
       console.log("*********getExifInfo==========>>>>>", msg);
-
-      updateExif(image);
-      // this.parseDate(msg.exif.DateTime, msg.exif.originalUri);
-      // obj = {
-      //   long: msg.exif.GPSLongitude,
-      //   longRef: msg.exif.GPSLongitudeRef,
-      //   lat: msg.exif.GPSLatitude,
-      //   latRef: msg.exif.GPSLatitudeRef,
-      // };
-
-      // console.log("ha haha", obj);
     });
   };
 
-  
-
-  const newExifData = {
-    DateTimeOriginal: "2024:04:04 12:00:00", // Example: change the date and time
-    Make: "NewMake",
-    Model: "NewModel",
-    // Add or modify other EXIF fields as needed
-  };
-
-  const updateExif = (image) => {
-    Exif.writeExif(image, newExifData)
-      .then(() => {
-        console.log("EXIF data updated successfully");
-        Exif.getExif(image).then((msg) => {
-          console.log("newwww==========>>>>>", msg);
-        });
-      })
-      .catch((error) => {
-        console.warn(error);
-      });
-  };
 
 
 
 
-  return (
-    <>
-      <Card>
-        {/* <Button title="Open Camera" onPress={openCamera} /> */}
+  // return (
+  //   <>
+  //     <Card>
+  //       <Pressable
+  //         onPress={handleOpenCamera}
+  //         style={{ backgroundColor: "gray", height: 150, padding: 40 }}
+  //       >
+  //         <Icon
+  //           name="camera"
+  //           size={60}
+  //           color={"white"}
+  //           style={{ textAlign: "center" }}
+  //         />
+  //         <Text style={{ textAlign: "center", color: "white" }}>
+  //           Open Camera
+  //         </Text>
+  //       </Pressable>
 
-        <Pressable
-          onPress={openCamera}
-          style={{ backgroundColor: "gray", height: 150, padding: 40 }}
-        >
-          <Icon
-            name="camera"
-            size={60}
-            color={"white"}
-            style={{ textAlign: "center" }}
-          />
-          <Text style={{ textAlign: "center", color: "white" }}>
-            Open Camera
-          </Text>
-        </Pressable>
+  //       <View>
+  //         <Button title="Open Gallary" onPress={browseGallery} />
+  //       </View>
+  //     </Card>
+  //   </>
+  // );
 
-        <View>
-          {/* <Button title="Open Camera" onPress={camera2} /> */}
-          <Button title="Open Gallary" onPress={openCamera2} />
-        </View>
-      </Card>
-    </>
-  );
-};
 
-export default Camera;
+// };
+
+export  {browseGallery, handleOpenCamera }

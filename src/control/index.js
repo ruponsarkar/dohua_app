@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, Text, ScrollView } from 'react-native';
-import ManageTeam from './manageTeam';
+import Projects from './projectList';
 // import AddMember from './addMember';
 
 const Control = () => {
     return (
         <ScrollView>
             <View>
-                <ManageTeam/>
+                <Projects/>
             </View>
         </ScrollView>
     )

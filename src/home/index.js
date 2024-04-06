@@ -9,12 +9,17 @@ import {
   View,
   Button,
   PermissionsAndroid,
+  Pressable,
+  Image
 } from "react-native";
+import Icon from "react-native-vector-icons/Feather";
 
 import { Card, Text, Divider, Badge } from "@rneui/themed";
 import Geolocation from "react-native-geolocation-service";
 import opencage from "opencage-api-client";
-import Camera from "./camera";
+import { browseGallery, handleOpenCamera } from "./camera";
+import Address from "./address";
+import { getCoords, getLocationCoords } from "./location";
 
 const Home = ({ navigation }) => {
   const [location, setLocation] = useState(false);
@@ -22,8 +27,15 @@ const Home = ({ navigation }) => {
   const [address, setAddress] = useState({});
 
   useEffect(()=>{
-    getLocation()
+    getLocation();
   },[]);
+
+
+
+  const haha = ()=>{
+    var a =  getLocationCoords();
+    console.log("haha", a);
+  }
 
   const getAddress = (lati, long) => {
     const key = "e1302b58fbc74c14a40fd32f08eb2727";
@@ -35,7 +47,11 @@ const Home = ({ navigation }) => {
       setAddress({ all: result, address: result.formatted });
       console.log("==>>", result);
       console.log(result.formatted);
-    });
+    })
+    .catch((e)=>{
+      console.log("error", e);
+    })
+    ;
   };
 
   const requestLocationPermission = async () => {
@@ -90,10 +106,66 @@ const Home = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <Camera />
+      {/* <Camera /> */}
+      <Address />
 
 
       <Card>
+        <Image source={require('../assets/logo.png')} style={{height: 100, width: 'auto', resizeMode: 'center'}}/>
+      </Card>
+
+      <Card>
+        <Pressable
+          onPress={handleOpenCamera}
+          style={{ backgroundColor: "gray", height: 150, padding: 40 }}
+        >
+          <Icon
+            name="camera"
+            size={60}
+            color={"white"}
+            style={{ textAlign: "center" }}
+          />
+          <Text style={{ textAlign: "center", color: "white" }}>
+            Open Camera
+          </Text>
+        </Pressable>
+
+        <View>
+          <Button title="Open Gallary" 
+          onPress={browseGallery}
+           />
+        </View>
+        <View>
+          <Button title="Open haha" 
+          onPress={haha}
+           />
+        </View>
+      </Card>
+
+      <Card>
+        <View>
+          <Card>
+            <Text>
+              Total Projects:  20
+            </Text>
+          </Card>
+          <Card>
+            <Text>
+              Completed Projects:  20
+            </Text>
+          </Card>
+          <Card>
+            <Text>
+              Ongoing Projects:  20
+            </Text>
+          </Card>
+        </View>
+      </Card>
+
+     
+
+
+      {/* <Card>
         <View>
           <Text>{address.address}</Text>
           
@@ -104,7 +176,7 @@ const Home = ({ navigation }) => {
         <View>
             <Button title="Refresh Location" onPress={getLocation} />
           </View>
-      </Card>
+      </Card> */}
     </ScrollView>
   );
 };
