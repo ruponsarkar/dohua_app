@@ -5,7 +5,7 @@
  * @format
  */
 
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
@@ -27,14 +27,16 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
+
+
 import AuthStack from './src/navigation/homeNavigation';
 import { NavigationContainer } from '@react-navigation/native';
-import CSS from './src/assets/css';
 
 import MyTabs from './src/navigation/barnav';
+import Address from './src/home/address';
+import { Provider } from 'react-redux'
 
-import Permission from './src/helper/permissions'
-
+import { store } from './src/redux/store';
 
 
 
@@ -48,19 +50,13 @@ function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
 
-  // useEffect(()=>{
-  //   Permission();
-  // }, [])
-
-
-
   return (
-    <NavigationContainer>
-      <Permission />
-      <MyTabs />
-      {/* <AuthStack /> */}
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
 
+    </Provider>
   );
 }
 

@@ -4,7 +4,7 @@ import List from '../list';
 import { NavigationContainer } from '@react-navigation/native';
 import Control from '../control';
 import AddMember from '../control/addMember';
-import ManageTeam from '../control/manageTeam';
+import ManageTeam from '../control/projectList';
 import Designation from '../control/designation';
 
 const ControlNavigation = () => {
