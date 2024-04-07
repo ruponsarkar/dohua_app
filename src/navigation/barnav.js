@@ -9,6 +9,9 @@ import Notifications from '../notification/nitification';
 import Profile from '../profile';
 import Control from '../control';
 import ControlNavigation from './ControlNavigation';
+import Login from '../login/login';
+import ProjectListScreen from '../projectList/ProjectListScreen';
+import ProjectDetailsScreen from '../ProjectDetails/projectDetails';
 
 const Tab = createBottomTabNavigator();
 
@@ -60,6 +63,36 @@ function MyTabs() {
                     component={Profile}
                     options={{
                         tabBarLabel: 'Profile',
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="account" color={color} size={size} />
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Login"
+                    component={Login}
+                    options={{
+                        tabBarLabel: 'Login',
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="account" color={color} size={size} />
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Project List"
+                    component={ProjectListScreen}
+                    options={{
+                        tabBarLabel: 'Project List',
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="account" color={color} size={size} />
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Project Details"
+                    component={ProjectDetailsScreen}
+                    options={{
+                        tabBarLabel: 'Project Details',
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="account" color={color} size={size} />
                         ),

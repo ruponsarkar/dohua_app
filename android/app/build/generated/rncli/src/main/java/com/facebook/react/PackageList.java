@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 // react-native-device-info
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
+// react-native-document-picker
+import com.reactnativedocumentpicker.RNDocumentPickerPackage;
 // react-native-exif
 import com.devialab.exif.RCTExifPackage;
 // react-native-fs
@@ -77,6 +79,7 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new RNDeviceInfo(),
+      new RNDocumentPickerPackage(),
       new RCTExifPackage(),
       new RNFSPackage(),
       new RNFusedLocationPackage(),
