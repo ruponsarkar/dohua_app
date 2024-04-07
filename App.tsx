@@ -18,14 +18,6 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 
 
 
@@ -40,6 +32,7 @@ import { store } from './src/redux/store';
 
 
 
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -48,7 +41,6 @@ type SectionProps = PropsWithChildren<{
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
 
   return (
     <Provider store={store}>

@@ -1,16 +1,16 @@
-export const firstFunc = (data) => {
+export const firstFunc = (amount) => {
   return (dispatch) => {
     dispatch({
       type: "deposite",
-      payload: data,
+      payload: amount,
     });
   };
 };
-export const secondFunc = (data) => {
+export const secondFunc = (amount) => {
     return (dispatch) => {
         dispatch({
           type: "withdrow",
-          payload: data,
+          payload: amount,
         });
       };
 };

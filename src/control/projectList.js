@@ -7,11 +7,19 @@ import ModalView from "../component/modal";
 import ChangeEMI from "./chnageEMI";
 import ChangeRole from "./changeRole";
 import Icon from "react-native-vector-icons/Feather";
+
 import { browseGallery, handleOpenCamera } from "../home/camera";
+import { useSelector } from "react-redux";
 
 const Projects = ({ navigation }) => {
+  const test = useSelector(state=>state.amount)
+  const test2 = useSelector(state=>state.location)
   const [modal1, setModal1] = useState("");
   const [modal2, setModal2] = useState("");
+
+  useEffect(()=>{
+    console.log("im here", test2);
+  }, []);
 
   const [projects, setProjects] = useState([
     {
@@ -50,7 +58,7 @@ const Projects = ({ navigation }) => {
     <ScrollView>
       <Card>
         <View>
-          <Text style={[CSS.textCenter, CSS.fontBold]}>Manage Projects</Text>
+          <Text style={[CSS.textCenter, CSS.fontBold]}>Manage Projects {test} {test2.latitude}</Text>
         </View>
       </Card>
 
@@ -60,6 +68,7 @@ const Projects = ({ navigation }) => {
           projects.map((p) => (
             <>
             <View
+            key={p.id}
               style={{
                 // flexDirection: "row",
                 marginBottom: 5,
@@ -73,7 +82,7 @@ const Projects = ({ navigation }) => {
 
               <View>
                 <Text>
-                  <Button onPress={browseGallery}>
+                  <Button onPress={()=>browseGallery('upload')}>
                     {" "}
                     Browse &nbsp;
                     <Icon
@@ -102,8 +111,8 @@ const Projects = ({ navigation }) => {
           ))}
       </Card>
 
-      <ModalView open={modal1} close={setModal1} data={<ChangeEMI />} />
-      <ModalView open={modal2} close={setModal2} data={<ChangeRole />} />
+      {/* <ModalView open={modal1} close={setModal1} data={<ChangeEMI />} />
+      <ModalView open={modal2} close={setModal2} data={<ChangeRole />} /> */}
     </ScrollView>
   );
 };

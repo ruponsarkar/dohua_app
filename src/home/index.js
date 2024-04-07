@@ -13,29 +13,38 @@ import {
   Image
 } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { Card, Text, Divider, Badge } from "@rneui/themed";
 import Geolocation from "react-native-geolocation-service";
 import opencage from "opencage-api-client";
 import { browseGallery, handleOpenCamera } from "./camera";
 import Address from "./address";
-import { getCoords, getLocationCoords } from "./location";
+
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
 
 const Home = ({ navigation }) => {
+
+  const dispatch = useDispatch()
+  const coords = useSelector(state=>state.location)
+    const {fetchLocation} = bindActionCreators(actionCreators, dispatch);
+
+
   const [location, setLocation] = useState(false);
 
   const [address, setAddress] = useState({});
 
   useEffect(()=>{
-    getLocation();
-  },[]);
+    // getLocation();
+
+    fetchLocation();
+
+  },[coords.latitude]);
 
 
 
-  const haha = ()=>{
-    var a =  getLocationCoords();
-    console.log("haha", a);
-  }
 
   const getAddress = (lati, long) => {
     const key = "e1302b58fbc74c14a40fd32f08eb2727";
@@ -107,7 +116,22 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView>
       {/* <Camera /> */}
-      <Address />
+      {/* <Address /> */}
+
+      <View style={{backgroundColor: 'white', padding: 12}}>
+        <Text>
+          Latitude: {coords.latitude}
+        </Text>
+        <Text>
+        Longitude: {coords.longitude}
+        </Text>
+        <Text>
+          {console.log("====saiaaa==>>", coords)}
+        Address: {coords.address}
+        </Text>
+
+        <Text style={{textAlign: 'center'}}><MaterialCommunityIcons name="reload" size={22}/></Text>
+      </View>
 
 
       <Card>
@@ -132,14 +156,14 @@ const Home = ({ navigation }) => {
 
         <View>
           <Button title="Open Gallary" 
-          onPress={browseGallery}
+          onPress={()=>browseGallery('not upload')}
            />
         </View>
-        <View>
+        {/* <View>
           <Button title="Open haha" 
           onPress={haha}
            />
-        </View>
+        </View> */}
       </Card>
 
       <Card>

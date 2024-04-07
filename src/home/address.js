@@ -17,10 +17,18 @@ import {
 
 import Geolocation from "react-native-geolocation-service";
 import opencage from "opencage-api-client";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
 
-// function to check permissions and get Latitude and longitute
 
 const Address = () => {
+
+    const amount = useSelector(state=> state.amount)
+    const dispatch = useDispatch()
+    const {fetchLocation, secondFunc} = bindActionCreators(actionCreators, dispatch);
+
+
   const [address, setAddress] = useState();
 
   useEffect(() => {
@@ -34,7 +42,7 @@ const Address = () => {
       if (res) {
         Geolocation.getCurrentPosition(
           (position) => {
-            console.log("position==>>", position);
+            // console.log("position==>>", position);
             getAddress(position.coords.latitude, position.coords.longitude);
           },
           (error) => {
@@ -58,10 +66,10 @@ const Address = () => {
   };
 
   //   to get addresss
-  const getAddress = async (lati, long) => {
+  const getAddress =  (lati, long) => {
     const key = "e1302b58fbc74c14a40fd32f08eb2727";
     const cord = lati + "," + long;
-    await opencage
+     opencage
       .geocode({ key, q: cord })
       .then((response) => {
         var result = {
@@ -71,8 +79,6 @@ const Address = () => {
         };
 
         setAddress(result);
-        // console.log("main result=>", result);
-        // return result;
       })
       .catch((e) => {
         console.log("error", e);
@@ -84,6 +90,8 @@ const Address = () => {
     <>
       <View>
         <Text style={{backgroundColor: 'white'}}>Address: {address?.address}</Text>
+        <Text>{amount}</Text>
+        <Button title="Click Me" onPress={()=> fetchLocation()}/>
         {/* <Text>
           Latitude:{" "}
           <Text style={{ fontWeight: "bold" }}> {address?.latitude} </Text>

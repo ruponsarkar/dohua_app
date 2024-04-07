@@ -1,1 +1,2 @@
-export * as actionCreators from "./actions/index"
+import * as actionCreators from "./actions/geolocationActions"
+export {actionCreators}

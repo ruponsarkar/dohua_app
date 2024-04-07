@@ -10,15 +10,54 @@ import ImagePicker from "react-native-image-crop-picker";
 import RNFetchBlob from "rn-fetch-blob";
 import Exif from "react-native-exif";
 var RNFS = require("react-native-fs");
+import axios from 'axios';
 
 // const Camera = () => {
 
 
-  const browseGallery = () => {
-    ImagePicker.openPicker({ includeBase64: true }).then((res) => {
-      console.log("fileName==>", res.path);
+  const browseGallery = (value) => {
+
+    let options = {
+      storageOptions: {
+        skipBackup: false,
+        path: 'file:///storage/emulated/0/Pictures/',
+        // path: 'file:///storage/emulated/0/gmcgeotag/',
+      },
+    };
+
+    launchImageLibrary().then((res)=>{
+      console.log("fileName==>", res.assets[0]);
+      console.log("fileName==>", res.assets[0].fileName);
+      const splittedArray = res.assets[0].uri.split("/");
+      const fileName = splittedArray[splittedArray.length - 1];
+
+      console.log(fileName);
+
+
+    })
+    return;
+
+    console.log("ooo", value);
+    // return;
+
+
+    ImagePicker.openPicker({ includeBase64: false, includeExif: true }).then((res) => {
+      console.log("fileName==>", res);
       const splittedArray = res.path.split("/");
       const fileName = splittedArray[splittedArray.length - 1];
+
+      console.log(fileName);
+      return;
+
+      const folderPath = "storage/emulated/0/Pictures";
+    const filePath = folderPath + "/" + fileName;
+
+      // uploadImage(res.path);
+      getExifInfo(filePath);
+
+      return ;
+
+
       saveImage(res.data, fileName, res.mime);
     });
   };
@@ -44,7 +83,7 @@ var RNFS = require("react-native-fs");
 
  const openCamera = () => {
     let options = {
-      mediaType: "mixed",
+      // mediaType: "mixed",
       includeBase64: true,
       exif: true,
       includeExtra: true,
@@ -53,6 +92,19 @@ var RNFS = require("react-native-fs");
       var fileName = response.assets[0].fileName;
       var mime = response.assets[0].type;
       console.log("mime==>>", response.assets[0].type);
+      console.log("===>>>", response.assets[0].uri);
+      // return;
+      
+      const formData = new FormData();
+      formData.append('image', {
+        uri: response.assets[0].uri,
+        type: response.assets[0].type,
+        name: response.assets[0].fileName
+      });
+
+      uploadImage(formData);
+
+
 
       saveImage(response.assets[0].base64, fileName, mime);
     });
@@ -88,7 +140,7 @@ var RNFS = require("react-native-fs");
 
         console.log("otokhan==>", filePath, mime);
 
-        getExifInfo(filePath);
+        // getExifInfo(filePath);
 
         RNFetchBlob.fs
           .scanFile([{ path: filePath, mime: mime }])
@@ -101,11 +153,49 @@ var RNFS = require("react-native-fs");
       });
   };
 
-  const getExifInfo = (image) => {
-    console.log("exif=>", image);
-    Exif.getExif(image).then((msg) => {
-      console.log("*********getExifInfo==========>>>>>", msg);
+  const getExifInfo = async (filePath) => {
+    var a = await Exif.getExif(filePath).then((info) => {
+      console.log("*********here babe==========>>>>>", info);
+      console.log("GPSLatitude==========>>>>>", info.exif.GPSLatitude);
+      var GPSLatitude = info.exif.GPSLatitude;
+      var GPSLongitude = info.exif.GPSLongitude;
+      var Model = info.exif.Model;
+      console.log(GPSLatitude, GPSLongitude, Model);
+      
+      const replacedString1 = GPSLatitude.replace(/\//g, '.').replace(/,/g, '');;
+      
+      console.log("new", replacedString1);
+
+
+
+
+      
     });
+  };
+
+  // const getExifInfo = async (filePath) => {
+  //   var a = await Exif.getExif(filePath).then((info) => {
+  //     console.log("*********getExifInfo==========>>>>>", info);
+  //     return info;
+      
+  //   });
+  //   return a
+  // };
+
+
+  const uploadImage = async (formData) => {
+    try {
+      const response = await axios.post('https://pageuptechnologies.com/api/testApi', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          // Add any additional headers required by your server
+        },
+      });
+  
+      console.log('Image uploaded successfully:', response.data);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
   };
 
 
