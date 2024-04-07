@@ -11,6 +11,7 @@ import RNFetchBlob from "rn-fetch-blob";
 import Exif from "react-native-exif";
 var RNFS = require("react-native-fs");
 import axios from 'axios';
+import { useSelector } from "react-redux";
 
 // const Camera = () => {
 
@@ -63,7 +64,7 @@ import axios from 'axios';
   };
 
 
-  const handleOpenCamera=()=>{
+  const handleOpenCamera=(project_id, location)=>{
     requestCameraPermission().then((res)=>{
       console.log("camera permission check", res);
       if(res === false){
@@ -75,13 +76,19 @@ import axios from 'axios';
         ]);
       }
       else{
-        openCamera();
+        openCamera(project_id, location);
       }
     })
   }
 
 
- const openCamera = () => {
+ const openCamera = (project_id, location) => {
+
+  console.log("project_id", project_id);
+  console.log("location", location);
+  // return;
+
+
     let options = {
       // mediaType: "mixed",
       includeBase64: true,
@@ -93,6 +100,8 @@ import axios from 'axios';
       var mime = response.assets[0].type;
       console.log("mime==>>", response.assets[0].type);
       console.log("===>>>", response.assets[0].uri);
+      console.log("===>>www>", response.assets[0]);
+
       // return;
       
       const formData = new FormData();
@@ -101,6 +110,10 @@ import axios from 'axios';
         type: response.assets[0].type,
         name: response.assets[0].fileName
       });
+      formData.append('project_id', project_id)
+      formData.append('latitude', location.latitude)
+      formData.append('longitude', location.longitude)
+      formData.append('address', location.address)
 
       uploadImage(formData);
 
@@ -193,6 +206,15 @@ import axios from 'axios';
       });
   
       console.log('Image uploaded successfully:', response.data);
+
+      Alert.alert('Success', 'Photo uploaded Successfully', [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+      ]);
+
+
     } catch (error) {
       console.error('Error uploading image:', error);
     }
