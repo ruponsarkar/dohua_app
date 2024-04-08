@@ -63,7 +63,7 @@ const ProjectListScreen = ({ navigation }) => {
   // Handle project press
   const handleProjectPress = (projectId) => {
     console.log("Project selected:", projectId);
-    navigation.navigate('ProjectDetailsScreen')
+    navigation.navigate('ProjectDetailsScreen', { projectId: projectId })
   };
 
 

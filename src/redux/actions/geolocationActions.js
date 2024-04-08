@@ -15,18 +15,15 @@ export const fetchLocation = () => {
 
   return (dispatch) => {
    
-    console.log("solchee");
     dispatch({ type: FETCH_LOCATION_REQUEST });
-
+console.log("here...........");
     Geolocation.getCurrentPosition(
       (position) => {
-        console.log("position=======>>> here==>>", position);
-
         const key = "e1302b58fbc74c14a40fd32f08eb2727";
         const cord = position.coords.latitude + "," + position.coords.longitude;
+        console.log(".....here2........", cord);
 
          opencage.geocode({ key, q: cord }).then((response) => {
-        
           dispatch({
             type: FETCH_LOCATION_SUCCESS,
             payload: {

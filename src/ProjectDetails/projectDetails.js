@@ -1,8 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, FlatList } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+
 
 const ProjectDetailsScreen = () => {
   // Sample project details
+  const route = useRoute();
+
+  const { projectId } = route.params; 
   const projectDetails = {
     name: 'Project A',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -43,7 +48,7 @@ const ProjectDetailsScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.projectName}>{projectDetails.name}</Text>
+        <Text style={styles.projectName}>{projectDetails.name} {projectId}</Text>
         <Text style={styles.projectDescription}>{projectDetails.description}</Text>
       </View>
       <View style={styles.detailsContainer}>

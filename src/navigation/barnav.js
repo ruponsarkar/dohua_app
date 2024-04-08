@@ -98,7 +98,7 @@ function MyTabs() {
           }}
         />
 
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Login"
           component={Login}
           options={{
@@ -111,7 +111,7 @@ function MyTabs() {
               />
             ),
           }}
-        />
+        /> */}
       </Tab.Navigator>
     </>
   );

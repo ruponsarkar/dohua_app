@@ -10,7 +10,7 @@ import {
   Button,
   PermissionsAndroid,
   Pressable,
-  Image
+  Image,
 } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -26,121 +26,41 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../redux/index";
 
 const Home = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const coords = useSelector((state) => state.location);
+  const { fetchLocation } = bindActionCreators(actionCreators, dispatch);
 
-  const dispatch = useDispatch()
-  const coords = useSelector(state=>state.location)
-    const {fetchLocation} = bindActionCreators(actionCreators, dispatch);
-
-
-  const [location, setLocation] = useState(false);
-
-  const [address, setAddress] = useState({});
-
-  useEffect(()=>{
-    // getLocation();
-
+  useEffect(() => {
     fetchLocation();
-
-  },[coords.latitude]);
-
-
-
-
-  const getAddress = (lati, long) => {
-    const key = "e1302b58fbc74c14a40fd32f08eb2727";
-    console.log("lati, long==>>", lati, long);
-    // 26.1571333, 91.7832321 
-    const cord = lati +','+ long;
-    opencage.geocode({ key, q: cord }).then((response) => {
-      result = response.results[0];
-      setAddress({ all: result, address: result.formatted });
-      console.log("==>>", result);
-      console.log(result.formatted);
-    })
-    .catch((e)=>{
-      console.log("error", e);
-    })
-    ;
-  };
-
-  const requestLocationPermission = async () => {
-    console.log("pp");
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-        {
-          title: "Geolocation Permission",
-          message: "Can we access your location?",
-          buttonNeutral: "Ask Me Later",
-          buttonNegative: "Cancel",
-          buttonPositive: "OK",
-        }
-      );
-      console.log("granted", granted);
-      if (granted === "granted") {
-        console.log("You can use Geolocation");
-        return true;
-      } else {
-        console.log("You cannot use Geolocation");
-        return false;
-      }
-    } catch (err) {
-      return false;
-    }
-  };
-
-  // function to check permissions and get Location
-  const getLocation = () => {
-    const result = requestLocationPermission();
-    result.then((res) => {
-      console.log("res is:", res);
-      if (res) {
-        Geolocation.getCurrentPosition(
-          (position) => {
-            console.log("==>>", position);
-            setLocation(position);
-            getAddress(position.coords.latitude, position.coords.longitude);
-          },
-          (error) => {
-            // See error code charts below.
-            console.log(error.code, error.message);
-            setLocation(false);
-          },
-          { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-        );
-      }
-    });
-    console.log(location);
-  };
+  }, [coords.latitude]);
 
   return (
     <ScrollView>
-      {/* <Camera /> */}
-      {/* <Address /> */}
 
-      <View style={{backgroundColor: 'white', padding: 12}}>
-        <Text>
-          Latitude: {coords.latitude}
-        </Text>
-        <Text>
-        Longitude: {coords.longitude}
-        </Text>
+      <View style={{ backgroundColor: "wheat", padding: 12 }}>
+        <Text>Latitude: {coords.latitude}</Text>
+        <Text>Longitude: {coords.longitude}</Text>
         <Text>
           {console.log("====saiaaa==>>", coords)}
-        Address: {coords.address}
+          Address: {coords.address}
         </Text>
-
-        <Text style={{textAlign: 'center'}}><MaterialCommunityIcons name="reload" size={22}/></Text>
+        <Pressable onPress={() => fetchLocation()}>
+          <Text style={{ textAlign: "center" }}>
+            <MaterialCommunityIcons name="reload" size={22} />
+          </Text>
+        </Pressable>
       </View>
 
-
       <Card>
-        <Image source={require('../assets/logo.png')} style={{height: 100, width: 'auto', resizeMode: 'center'}}/>
+        <Image
+          source={require("../assets/logo.png")}
+          style={{ height: 100, width: "auto", resizeMode: "center" }}
+        />
       </Card>
 
       <Card>
         <Pressable
-          onPress={handleOpenCamera}
+          onPress={() => handleOpenCamera(null, null)}
           style={{ backgroundColor: "gray", height: 150, padding: 40 }}
         >
           <Icon
@@ -155,9 +75,10 @@ const Home = ({ navigation }) => {
         </Pressable>
 
         <View>
-          <Button title="Open Gallary" 
-          onPress={()=>browseGallery('not upload')}
-           />
+          <Button
+            title="Open Gallary"
+            onPress={() => browseGallery("not upload")}
+          />
         </View>
         {/* <View>
           <Button title="Open haha" 
@@ -169,25 +90,16 @@ const Home = ({ navigation }) => {
       <Card>
         <View>
           <Card>
-            <Text>
-              Total Projects:  20
-            </Text>
+            <Text>Total Projects: 20</Text>
           </Card>
           <Card>
-            <Text>
-              Completed Projects:  20
-            </Text>
+            <Text>Completed Projects: 20</Text>
           </Card>
           <Card>
-            <Text>
-              Ongoing Projects:  20
-            </Text>
+            <Text>Ongoing Projects: 20</Text>
           </Card>
         </View>
       </Card>
-
-     
-
 
       {/* <Card>
         <View>

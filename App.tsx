@@ -18,13 +18,12 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 
-
-
-
+import { requestLocationPermission } from './src/helper/permissions';
 import AuthStack from './src/navigation/homeNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 
 import MyTabs from './src/navigation/barnav';
+import Auth from './src/navigation/auth';
 import Address from './src/home/address';
 import { Provider } from 'react-redux'
 
@@ -39,13 +38,20 @@ type SectionProps = PropsWithChildren<{
 
 
 
+
+
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(()=>{
+    requestLocationPermission();
+  },[]);
 
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <MyTabs />
+        <Auth />
+        {/* <MyTabs /> */}
       </NavigationContainer>
 
     </Provider>
