@@ -11,8 +11,6 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-// @baronha/react-native-multiple-image-picker
-import com.reactnativemultipleimagepicker.MultipleImagePickerPackage;
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // react-native-device-info
@@ -82,7 +80,6 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
-      new MultipleImagePickerPackage(),
       new AsyncStoragePackage(),
       new RNDeviceInfo(),
       new RNDocumentPickerPackage(),

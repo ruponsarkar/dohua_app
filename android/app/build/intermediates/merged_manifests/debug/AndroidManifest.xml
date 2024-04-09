@@ -17,13 +17,6 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <queries>
         <intent>
@@ -94,8 +87,6 @@
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <provider
@@ -120,41 +111,6 @@
         <activity
             android:name="com.facebook.react.devsupport.DevSettingsActivity"
             android:exported="false" />
-
-        <provider
-            android:name="com.luck.picture.lib.basic.PictureFileProvider"
-            android:authorities="com.sth.luckProvider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/ps_file_paths" />
-        </provider>
-
-        <service
-            android:name="com.luck.picture.lib.service.ForegroundService"
-            android:enabled="true"
-            android:foregroundServiceType="location" />
-
-        <activity
-            android:name="com.luck.picture.lib.basic.PictureSelectorSupporterActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Base.Theme.NoActionBar" >
-        </activity>
-        <activity
-            android:name="com.luck.picture.lib.basic.PictureSelectorTransparentActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Picture.Theme.Translucent" >
-        </activity>
-        <activity
-            android:name="com.yalantis.ucrop.UCropMultipleActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.luck.lib.camerax.PictureCameraActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Base.Theme.NoActionBar" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
@@ -175,15 +131,6 @@
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
         </provider>
-
-        <service
-            android:name="androidx.camera.core.impl.MetadataHolderService"
-            android:enabled="false"
-            android:exported="false" >
-            <meta-data
-                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
-                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
-        </service>
 
         <meta-data
             android:name="com.facebook.soloader.enabled"

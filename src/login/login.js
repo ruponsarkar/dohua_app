@@ -6,41 +6,87 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  Alert
 } from "react-native";
+import axios from "axios";
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { DevSettings } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { DevSettings } from "react-native";
 
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
 
 const Login = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const { saveToken } = bindActionCreators(actionCreators, dispatch);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
- 
 
   const handleLogin = () => {
     // Implement authentication logic here
     console.log("Email:", email);
     console.log("Password:", password);
 
+    authlogin();
+    return;
+
     storeData();
 
-    
-
     // navigation.navigate('home')
-
-    
-
-
-    
   };
 
-  const storeData = async () => {
-    try {
-      await AsyncStorage.setItem('token', "123");
-      // navigation.navigate('MyTabs')
-      DevSettings.reload();
+  const authlogin = async () => {
+    // const response = await axios.post(
+    //   "https://learnoindia.zakticonsulting.in/backend/public/api/login?email=admin@admin.com&password=admin",
+    //   {
+    //     headers: {
+    //       "Content-Type": "multipart/form-data",
+    //     },
+    //   }
+    // );
 
+    const requestData = {
+      requestObject: {
+        email: "cpphookan.acs@assam.gov.in",
+        password: "Chinmoy#123",
+      },
+    };
+
+    try {
+      const response = await axios.post(
+        "http://statedatacenterdispuraiidc.com:9000/api/authenticate",
+        requestData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+          },
+        }
+      );
+
+      console.log("Response:", response.data.message.usr.email);
+
+      saveToken(response.data.message.usr, response.data.message.usr.email);
+
+      storeData(response.data.message.usr.email);
+      
+    } catch (error) {
+      console.error("Error:", error);
+      Alert.alert("Login failed !", "Wrong Email or Password ", [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+      ]);
+    }
+  };
+
+  const storeData = async (token) => {
+    try {
+      await AsyncStorage.setItem("token", token);
     } catch (error) {
       // Error saving data
       console.log("error store token", error);

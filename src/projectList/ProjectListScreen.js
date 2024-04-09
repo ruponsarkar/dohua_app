@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   View,
   Text,
@@ -11,14 +11,31 @@ import Icon from "react-native-vector-icons/Feather";
 
 import { browseGallery, handleOpenCamera } from "../home/camera";
 import { useSelector } from "react-redux";
+import axios from "axios";
+
 
 const ProjectListScreen = ({ navigation }) => {
 
   const location = useSelector(state=>state.location)
 
+  const [projects, setProjects] = useState([]);
+
+    const getProjects=()=>{
+      axios.post(
+        "http://statedatacenterdispuraiidc.com:9000/api/getAllProjects").then((res)=>{
+          console.log("res", res.data);
+          setProjects(res.data)
+        })
+    }
+
+    useEffect(()=>{
+      getProjects();
+    },[]);
+
+
 
   // Sample data for projects
-  const projects = [
+  const projectsa = [
     {
       id: "1",
       name: "Project A",
@@ -43,7 +60,7 @@ const ProjectListScreen = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.projectItem}
-      onPress={() => handleProjectPress(item.id)}
+      onPress={() => handleProjectPress(item)}
     >
       <Text style={styles.projectName}>{item.name}</Text>
       <Text style={styles.projectDescription}>{item.description}</Text>
@@ -61,9 +78,9 @@ const ProjectListScreen = ({ navigation }) => {
   );
 
   // Handle project press
-  const handleProjectPress = (projectId) => {
-    console.log("Project selected:", projectId);
-    navigation.navigate('ProjectDetailsScreen', { projectId: projectId })
+  const handleProjectPress = (project) => {
+    console.log("Project selected:", project);
+    navigation.navigate('ProjectDetailsScreen', { projectId: project.id , project: project })
   };
 
 

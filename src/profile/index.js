@@ -12,8 +12,16 @@ import {
 } from 'react-native';
 import { DevSettings } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
+
 
 const Profile = ({navigation}) => {
+
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const { removeToken } = bindActionCreators(actionCreators, dispatch);
 
   useEffect(()=>{
     retrieveData()
@@ -33,22 +41,27 @@ const Profile = ({navigation}) => {
   };
 
   const logout=()=>{
-    removeToken();
-    
-    
+    // removeToken();
 
+    removeToken(null, null)
+
+    removeItemValue();
+    
   }
 
-  const removeToken = async()=> {
+  const  removeItemValue = async()=> {
     try {
         await AsyncStorage.removeItem('token');
-        DevSettings.reload();
+        console.log("removed");
         return true;
-    }
-    catch(exception) {
+      }
+      catch(exception) {
+      console.log("error", exception);
         return false;
     }
 }
+
+
 
     const imageExists = () => {
         try {
