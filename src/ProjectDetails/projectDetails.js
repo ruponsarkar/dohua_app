@@ -1,17 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, FlatList } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+
 
 const ProjectDetailsScreen = () => {
   // Sample project details
-  const projectDetails = {
-    name: 'Project A',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    startDate: 'January 1, 2023',
-    endDate: 'December 31, 2023',
-    client: 'Client X',
-    status: 'In Progress',
-    // Add more project details as needed
-  };
+  const route = useRoute();
+
+  const { project } = route.params; 
+
+  console.log("project", project);
+  const projectDetails = project
 
   // Sample image gallery data
   const imageGallery = [
@@ -43,7 +42,7 @@ const ProjectDetailsScreen = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.projectName}>{projectDetails.name}</Text>
+        <Text style={styles.projectName}>{projectDetails.name} </Text>
         <Text style={styles.projectDescription}>{projectDetails.description}</Text>
       </View>
       <View style={styles.detailsContainer}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {
     SafeAreaView,
     ScrollView,
@@ -8,9 +8,60 @@ import {
     useColorScheme,
     View,
     Image,
+    Button
 } from 'react-native';
+import { DevSettings } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
 
-const Profile = () => {
+
+const Profile = ({navigation}) => {
+
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const { removeToken } = bindActionCreators(actionCreators, dispatch);
+
+  useEffect(()=>{
+    retrieveData()
+  },[]);
+
+     const retrieveData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('token');
+      console.log(value);
+      if (value !== null) {
+        console.log("token", value);
+        setToken(value)
+      }
+    } catch (error) {
+      console.log("error to get token", error);
+    }
+  };
+
+  const logout=()=>{
+    // removeToken();
+
+    removeToken(null, null)
+
+    removeItemValue();
+    
+  }
+
+  const  removeItemValue = async()=> {
+    try {
+        await AsyncStorage.removeItem('token');
+        console.log("removed");
+        return true;
+      }
+      catch(exception) {
+      console.log("error", exception);
+        return false;
+    }
+}
+
+
 
     const imageExists = () => {
         try {
@@ -19,6 +70,9 @@ const Profile = () => {
           return false;
         }
       };
+
+
+
       
     return (
         <View style={styles.container}>
@@ -36,6 +90,11 @@ const Profile = () => {
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Location:</Text>
         <Text style={styles.infoText}>New York, USA</Text>
+      </View>
+
+      <View>
+        <Button title='Logout' onPress={logout} />
+
       </View>
       {/* Add more information as needed */}
     </View>

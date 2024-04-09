@@ -21,14 +21,14 @@ function MyTabs() {
   return (
     <>
       <Tab.Navigator
-        initialRouteName="HomeNavigation"
+        initialRouteName="Home"
         screenOptions={{
           tabBarActiveTintColor: "#e91e63",
         }}
       >
         <Tab.Screen
           name="Home"
-          component={HomeNavigation}
+          component={Home}
           options={{
             tabBarLabel: "Home",
             tabBarIcon: ({ color, size }) => (
@@ -36,28 +36,6 @@ function MyTabs() {
             ),
           }}
         />
-        {/* <Tab.Screen
-                    name="Notifications"
-                    component={Notifications}
-                    options={{
-                        tabBarLabel: 'Updates',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="bell" color={color} size={size} />
-                        ),
-                        tabBarBadge: 3,
-                    }}
-                /> */}
-        {/* <Tab.Screen
-                    name="ControlNavigation"
-                    component={ControlNavigation}
-                    options={{
-                        tabBarLabel: 'Projects',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="tools" color={color} size={size} />
-                        ),
-                    }}
-                /> */}
-
         <Tab.Screen
           name="Project List"
           component={ProjectNavigation}
@@ -73,16 +51,6 @@ function MyTabs() {
             ),
           }}
         />
-        {/* <Tab.Screen
-                    name="Project Details"
-                    component={ProjectDetailsScreen}
-                    options={{
-                        tabBarLabel: 'Project Details',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="account" color={color} size={size} />
-                        ),
-                    }}
-                /> */}
         <Tab.Screen
           name="Profile"
           component={Profile}
@@ -98,7 +66,7 @@ function MyTabs() {
           }}
         />
 
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Login"
           component={Login}
           options={{
@@ -111,7 +79,7 @@ function MyTabs() {
               />
             ),
           }}
-        />
+        /> */}
       </Tab.Navigator>
     </>
   );
