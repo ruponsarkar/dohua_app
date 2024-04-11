@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,24 +6,19 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  Alert
+  Alert,
 } from "react-native";
 import axios from "axios";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { DevSettings } from "react-native";
 
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../redux/index";
+import { AuthContext } from "../navigation/index";
 
 const Login = ({ navigation }) => {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const { saveToken } = bindActionCreators(actionCreators, dispatch);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { dispatch } = useContext(AuthContext);
 
   const handleLogin = () => {
     // Implement authentication logic here
@@ -31,11 +26,6 @@ const Login = ({ navigation }) => {
     console.log("Password:", password);
 
     authlogin();
-    return;
-
-    storeData();
-
-    // navigation.navigate('home')
   };
 
   const authlogin = async () => {
@@ -67,12 +57,20 @@ const Login = ({ navigation }) => {
         }
       );
 
-      console.log("Response:", response.data.message.usr.email);
-
-      saveToken(response.data.message.usr, response.data.message.usr.email);
-
-      storeData(response.data.message.usr.email);
-      
+      var user = response.data.message.usr;
+      console.log("==>>", JSON.stringify(user));
+      var data = [
+        ["user", JSON.stringify(user)],
+        ["userToken", user?.email],
+      ];
+      AsyncStorage.multiSet(data, (res) => {
+      });
+      dispatch({
+        type: "SIGN_IN",
+        user: user,
+        userToken: user?.email,
+        LoginType: 2,
+      });
     } catch (error) {
       console.error("Error:", error);
       Alert.alert("Login failed !", "Wrong Email or Password ", [
@@ -87,6 +85,8 @@ const Login = ({ navigation }) => {
   const storeData = async (token) => {
     try {
       await AsyncStorage.setItem("token", token);
+      console.log("token saved");
+      navigation.navigate("Home");
     } catch (error) {
       // Error saving data
       console.log("error store token", error);

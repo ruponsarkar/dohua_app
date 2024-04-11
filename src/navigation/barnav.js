@@ -1,88 +1,71 @@
+import React, {useEffect, useState} from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "../home";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-// import { Icon } from '@rneui/themed';
-import Home from "../home";
-import HomeNavigation from "./homeNavigation";
-import { View } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
-import Notifications from "../notification/nitification";
-import Profile from "../profile";
-import Control from "../control";
-import ControlNavigation from "./ControlNavigation";
-import Login from "../login/login";
 import ProjectListScreen from "../projectList/ProjectListScreen";
 import ProjectDetailsScreen from "../ProjectDetails/projectDetails";
-
-import ProjectNavigation from "./projectNav";
+import Profile from "../profile";
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
-function MyTabs() {
+
+const ProjectListNav=()=>{
   return (
-    <>
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          tabBarActiveTintColor: "#e91e63",
-        }}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="home" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Project List"
-          component={ProjectNavigation}
-          options={{
-            headerShown: false,
-            tabBarLabel: "Project List",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="account"
-                color={color}
-                size={size}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={Profile}
-          options={{
-            tabBarLabel: "Profile",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="account"
-                color={color}
-                size={size}
-              />
-            ),
-          }}
-        />
+    <Stack.Navigator>
+      <Stack.Screen
+        name="ProjectListScreen"
+        component={ProjectListScreen}
+        options={{ headerShown: true, gestureStart: true, title: "Projects" }}
+      />
+      <Stack.Screen
+        name="ProjectDetailsScreen"
+        component={ProjectDetailsScreen}
+        options={{ headerShown: true, gestureStart: true, title : 'Project Details' }}
+      />
+    </Stack.Navigator>
+  );
 
-        {/* <Tab.Screen
-          name="Login"
-          component={Login}
-          options={{
-            tabBarLabel: "Login",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="account"
-                color={color}
-                size={size}
-              />
-            ),
-          }}
-        /> */}
-      </Tab.Navigator>
-    </>
+}
+
+
+function TabNav() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home Page"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Project List"
+        component={ProjectListNav}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Project List",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profiles"
+        component={Profile}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 }
 
-export default MyTabs;
+export default TabNav;

@@ -29,6 +29,8 @@ import { Provider } from 'react-redux'
 
 import { store } from './src/redux/store';
 
+import Appss from './src/navigation';
+
 
 
 
@@ -49,10 +51,10 @@ function App(): React.JSX.Element {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Auth />
+      {/* <NavigationContainer> */}
+        <Appss />
         {/* <MyTabs /> */}
-      </NavigationContainer>
+      {/* </NavigationContainer> */}
 
     </Provider>
   );

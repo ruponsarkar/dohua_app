@@ -21,40 +21,22 @@ const ProjectListScreen = ({ navigation }) => {
   const [projects, setProjects] = useState([]);
 
     const getProjects=()=>{
+      console.log("called");
       axios.post(
         "http://statedatacenterdispuraiidc.com:9000/api/getAllProjects").then((res)=>{
           console.log("res", res.data);
           setProjects(res.data)
         })
+        .catch((err)=>{
+          console.log("error on getProjects", err);
+        })
     }
 
     useEffect(()=>{
+      console.log("useEffect");
       getProjects();
     },[]);
 
-
-
-  // Sample data for projects
-  const projectsa = [
-    {
-      id: "1",
-      name: "Project A",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      id: "2",
-      name: "Project B",
-      description:
-        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: "3",
-      name: "Project C",
-      description:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    // Add more projects as needed
-  ];
 
   // Render each project item
   const renderItem = ({ item }) => (
@@ -79,7 +61,7 @@ const ProjectListScreen = ({ navigation }) => {
 
   // Handle project press
   const handleProjectPress = (project) => {
-    console.log("Project selected:", project);
+    console.log("Project selected:", project.id);
     navigation.navigate('ProjectDetailsScreen', { projectId: project.id , project: project })
   };
 
