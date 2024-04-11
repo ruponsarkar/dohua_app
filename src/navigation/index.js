@@ -25,16 +25,16 @@ export default function App({ navigation }) {
         case "RESTORE_TOKEN":
           return {
             ...prevState,
-            userToken: action.token,
+            userToken: action.userToken,
             isLoading: false,
           };
         case "SIGN_IN":
           return {
             ...prevState,
             isSignout: false,
-            userToken: action.token,
+            userToken: action.userToken,
             user: action.user,
-            token: action?.email,
+            // token: action.token,
             // LoginType: 2,
           };
         case "SIGN_OUT":
@@ -58,7 +58,9 @@ export default function App({ navigation }) {
       let userToken;
 
       try {
-        userToken = await AsyncStorage.getItemAsync("userToken");
+        // userToken = await AsyncStorage.getItemAsync("userToken");
+        const userToken = await AsyncStorage.getItem('userToken');
+        dispatch({ type: "RESTORE_TOKEN", userToken: userToken });
       } catch (e) {
         // Restoring token failed
       }
@@ -67,7 +69,7 @@ export default function App({ navigation }) {
 
       // This will switch to the App screen or Auth screen and this loading
       // screen will be unmounted and thrown away.
-      dispatch({ type: "RESTORE_TOKEN", token: userToken });
+    //   dispatch({ type: "RESTORE_TOKEN", userToken: userToken });
     };
 
     bootstrapAsync();
@@ -84,13 +86,14 @@ export default function App({ navigation }) {
         let user;
         user = null;
         try {
-          user = await AsyncStorage.getItem("userToken");
+          user = await AsyncStorage.getItem("user");
+          userToken = await AsyncStorage.getItem("userToken");
           const modifiedUser = JSON.parse(user);
           console.log("modifiiedUser=index=>", modifiedUser);
           dispatch({
             type: "SIGN_IN",
             user: modifiedUser,
-            token: modifiedUser.token,
+            userToken: userToken,
           });
           //   dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token' });
         } catch (e) {

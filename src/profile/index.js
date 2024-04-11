@@ -22,17 +22,24 @@ const Profile = ({navigation}) => {
 
   const logout=()=>{
 
-    
     dispatch({
       type: "SIGN_OUT",
     });
     
     AsyncStorage.clear();
     return;
-    
-
-    
   }
+
+
+  // const retrieveData = async () => {
+  //   try {
+  //     const value = await AsyncStorage.getItem('user');
+  //     if (value !== null) {
+  //       console.log("value", value);
+  //     }
+  //   } catch (error) {
+  //   }
+  // };
 
 
 

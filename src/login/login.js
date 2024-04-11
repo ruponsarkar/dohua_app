@@ -12,11 +12,9 @@ import axios from "axios";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-
 import { AuthContext } from "../navigation/index";
 
 const Login = ({ navigation }) => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,11 +26,6 @@ const Login = ({ navigation }) => {
     console.log("Password:", password);
 
     authlogin();
-    return;
-
-    storeData();
-
-    // navigation.navigate('home')
   };
 
   const authlogin = async () => {
@@ -66,22 +59,18 @@ const Login = ({ navigation }) => {
 
       var user = response.data.message.usr;
       console.log("==>>", JSON.stringify(user));
-
-      console.log("Response:", user?.email);
-
-// return;
-      AsyncStorage.setItem("userToken", JSON.stringify(user?.email));
+      var data = [
+        ["user", JSON.stringify(user)],
+        ["userToken", user?.email],
+      ];
+      AsyncStorage.multiSet(data, (res) => {
+      });
       dispatch({
         type: "SIGN_IN",
         user: user,
-        token: user?.email,
+        userToken: user?.email,
         LoginType: 2,
       });
-
-
-      // storeData(response.data.message.usr.email);
-
-      // saveToken(response.data.message.usr, response.data.message.usr.email);
     } catch (error) {
       console.error("Error:", error);
       Alert.alert("Login failed !", "Wrong Email or Password ", [

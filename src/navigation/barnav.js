@@ -1,11 +1,33 @@
 import React, {useEffect, useState} from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../home";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import ProjectListScreen from "../projectList/ProjectListScreen";
+import ProjectDetailsScreen from "../ProjectDetails/projectDetails";
 import Profile from "../profile";
 
 const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+
+const ProjectListNav=()=>{
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="ProjectListScreen"
+        component={ProjectListScreen}
+        options={{ headerShown: true, gestureStart: true, title: "Projects" }}
+      />
+      <Stack.Screen
+        name="ProjectDetailsScreen"
+        component={ProjectDetailsScreen}
+        options={{ headerShown: true, gestureStart: true, title : 'Project Details' }}
+      />
+    </Stack.Navigator>
+  );
+
+}
 
 
 function TabNav() {
@@ -23,7 +45,7 @@ function TabNav() {
       />
       <Tab.Screen
         name="Project List"
-        component={ProjectListScreen}
+        component={ProjectListNav}
         options={{
           headerShown: false,
           tabBarLabel: "Project List",
