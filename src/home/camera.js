@@ -32,13 +32,13 @@ import { useSelector } from "react-redux";
 const browseGallery = async () => {
 
   const options = {
-    title: 'Select Avatar',
-    writeTempFile: false,
-    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
-    storageOptions: {
-      skipBackup: true,
-      path: 'file:///storage/emulated/0/Pictures'
-    }
+    // title: 'Select Avatar',
+    // writeTempFile: false,
+    // customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+    // storageOptions: {
+    //   skipBackup: true,
+    //   path: 'file:///storage/emulated/0/Pictures'
+    // }
   };
 
   launchImageLibrary(options, response => {

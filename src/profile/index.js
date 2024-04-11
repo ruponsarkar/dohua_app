@@ -1,65 +1,38 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext} from 'react'
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
+  
     StyleSheet,
     Text,
-    useColorScheme,
     View,
     Image,
     Button
 } from 'react-native';
-import { DevSettings } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../redux/index";
+
+
+// import { AuthContext } from "../navigation/index";
+import { AuthContext } from '../navigation';
+
 
 
 const Profile = ({navigation}) => {
 
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const { removeToken } = bindActionCreators(actionCreators, dispatch);
+  const { dispatch } = useContext(AuthContext);
 
-  useEffect(()=>{
-    retrieveData()
-  },[]);
-
-     const retrieveData = async () => {
-    try {
-      const value = await AsyncStorage.getItem('token');
-      console.log(value);
-      if (value !== null) {
-        console.log("token", value);
-        setToken(value)
-      }
-    } catch (error) {
-      console.log("error to get token", error);
-    }
-  };
 
   const logout=()=>{
-    // removeToken();
 
-    removeToken(null, null)
+    
+    dispatch({
+      type: "SIGN_OUT",
+    });
+    
+    AsyncStorage.clear();
+    return;
+    
 
-    removeItemValue();
     
   }
-
-  const  removeItemValue = async()=> {
-    try {
-        await AsyncStorage.removeItem('token');
-        console.log("removed");
-        return true;
-      }
-      catch(exception) {
-      console.log("error", exception);
-        return false;
-    }
-}
 
 
 

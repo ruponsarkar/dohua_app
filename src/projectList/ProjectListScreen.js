@@ -23,7 +23,7 @@ const ProjectListScreen = ({ navigation }) => {
     const getProjects=()=>{
       axios.post(
         "http://statedatacenterdispuraiidc.com:9000/api/getAllProjects").then((res)=>{
-          console.log("res", res.data);
+          // console.log("res", res.data);
           setProjects(res.data)
         })
     }
@@ -79,8 +79,8 @@ const ProjectListScreen = ({ navigation }) => {
 
   // Handle project press
   const handleProjectPress = (project) => {
-    console.log("Project selected:", project);
-    navigation.navigate('ProjectDetailsScreen', { projectId: project.id , project: project })
+    console.log("Project selected:", project.id);
+    // navigation.navigate('ProjectDetailsScreen', { projectId: project.id , project: project })
   };
 
 
