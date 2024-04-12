@@ -1,20 +1,15 @@
-import React, { useState } from "react";
-import {
-  View,
-  Button,
-  PermissionsAndroid,
-  Pressable,
-  Alert,
-} from "react-native";
+import React, { useState, useEffect } from "react";
+import { Alert } from "react-native";
 
 import { Card, Text, Divider, Badge } from "@rneui/themed";
 
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
+import ImagePickers from "react-native-image-picker";
 import {
   requestCameraPermission,
   requestLocationPermission,
   requestMediaLocation,
-  requestReadMediaImage
+  requestReadMediaImage,
 } from "../helper/permissions";
 import Icon from "react-native-vector-icons/Feather";
 import ImagePicker from "react-native-image-crop-picker";
@@ -22,52 +17,59 @@ import RNFetchBlob from "rn-fetch-blob";
 import Exif from "react-native-exif";
 var RNFS = require("react-native-fs");
 import axios from "axios";
-import { useSelector } from "react-redux";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
+import OverlayLoading from "../component/loader";
 
 // const Camera = () => {
 
-
 const browseGallery = async () => {
-
   const options = {
-    // title: 'Select Avatar',
-    // writeTempFile: false,
-    // customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
-    // storageOptions: {
-    //   skipBackup: true,
-    //   path: 'file:///storage/emulated/0/Pictures'
-    // }
+    noData: true,
   };
-
-  launchImageLibrary(options, response => {
-    console.log('[ImagePicker][response]', response);
-
-    const source = { uri: response.uri };
-  
+  launchImageLibrary(options, (response) => {
+    console.log(response, "options");
+    if (!response.didCancel) {
+      if (response.assets) {
+        if (response.assets[0].fileSize > 2097152) {
+          // let checkSize = formatBytes(response.assets[0].fileSize)
+          console.log("checkSize=>");
+          // FileSIzeBigResponse(checkSize)
+        } else {
+          console.log("options", response);
+          const imageAssetsArray = response.assets[0].uri;
+          console.log("imageAssetsArray", imageAssetsArray);
+          // setPhoto(imageAssetsArray)
+          // setPhoto(imageAssetsArray)
+          // setEdit({
+          //     ...edit,
+          //     photo: response.assets[0]
+          // })
+          // setBorrowerInfo({ ...borrowerInfo, image: response.assets[0] })
+        }
+      }
+    }
   });
 
   return;
 
-
-
   try {
     const image = await ImagePicker.openPicker({
       multiple: false, // Allow selecting only one image
-      mediaType: 'photo', // Pick only photos
+      mediaType: "photo", // Pick only photos
       includeExif: true, // Include Exif metadata,
-      path: 'file:///storage/emulated/0/Pictures'
+      path: "file:///storage/emulated/0/Pictures",
     });
 
     // Extract latitude from Exif data
     console.log("==>>>", image);
     const latitude = image.exif ? image.exif.GPSLatitude : null;
-    console.log('Latitude:', latitude);
-    
+    console.log("Latitude:", latitude);
+
     // Do something with the selected image
   } catch (error) {
-    console.log('Error picking image:', error);
+    console.log("Error picking image:", error);
   }
 };
 
@@ -184,8 +186,9 @@ const convertDMSToDD = (dmsString) => {
   return dd;
 };
 
-const handleOpenCamera = (project_id, location) => {
-  requestCameraPermission().then((res) => {
+const handleOpenCamera =async () => {
+
+  var result = requestCameraPermission().then((res) => {
     console.log("camera permission check", res);
     if (res === false) {
       Alert.alert("Permission Required", "Please enable Camera Permission ", [
@@ -194,59 +197,121 @@ const handleOpenCamera = (project_id, location) => {
           style: "cancel",
         },
       ]);
+      return false;
     } else {
-      openCamera(project_id, location);
+      let options = {
+        includeBase64: false,
+        exif: true,
+        includeExtra: true,
+      };
+
+      return launchCamera(options, (response) => {
+        if (response.didCancel) {
+          console.log("User cancelled image picker");
+        } else if (response.error) {
+          console.log("ImagePicker Error: ", response.error);
+        } else {
+          var fileName = response.assets[0].fileName;
+          var mime = response.assets[0].type;
+          var img = response.assets[0];
+    
+    
+        //  return uploadToServer(img, params);
+        }
+    
+        // saveImage(response.assets[0].base64, fileName, mime);
+      });
+
+
+
+
+      
     }
   });
+return result;
+
 };
 
-const openCamera = (project_id, location) => {
-  console.log("project_id", project_id);
-  console.log("location", location);
+const openCamera = async (params) => {
+  console.log("project_id", params.project_id);
+  console.log("location", params.location);
+
 
   let options = {
     // mediaType: "mixed",
-    includeBase64: true,
+    includeBase64: false,
     exif: true,
     includeExtra: true,
   };
-  launchCamera(options, (response) => {
-    var fileName = response.assets[0].fileName;
-    var mime = response.assets[0].type;
-    console.log("mime==>>", response.assets[0].type);
-    console.log("===>>>", response.assets[0].uri);
+   launchCamera(options, (response) => {
+    if (response.didCancel) {
+      console.log("User cancelled image picker");
+    } else if (response.error) {
+      console.log("ImagePicker Error: ", response.error);
+    } else {
+      var fileName = response.assets[0].fileName;
+      var mime = response.assets[0].type;
+      var img = response.assets[0];
 
-    // if(!location.latitude){
 
-    // }
-
-    // console.log("location", location.latitude);
-
-    // if (!location.latitude) {
-    //   Alert.alert("Error", "Location not found!", [
-    //     {
-    //       text: "Cancel",
-    //       style: "cancel",
-    //     },
-    //   ]);
-    //   return;
-    // }
-
-    if (project_id) {
-      const formData = new FormData();
-      formData.append("image", {
-        uri: response.assets[0].uri,
-        type: response.assets[0].type,
-        name: response.assets[0].fileName,
-      });
-      formData.append("project_id", project_id);
-      formData.append("latitude", location.latitude);
-      formData.append("longitude", location.longitude);
-      formData.append("address", location.address);
-      uploadImage(formData);
+     return uploadToServer(img, params);
     }
-    saveImage(response.assets[0].base64, fileName, mime);
+
+    // saveImage(response.assets[0].base64, fileName, mime);
   });
+
+};
+
+const uploadToServer = (img, params) => {
+  // console.log(params);
+  return "here";
+
+  const formData = new FormData();
+  formData.append("image", {
+    uri: img.uri,
+    type: img.type,
+    name: img.fileName,
+  });
+  formData.append("project_id", params.project_id);
+  formData.append("user_id", params.user_id);
+  formData.append("GPSLatitude", params.location.latitude);
+  formData.append("GPSLongitude", params.location.longitude);
+  formData.append("address", params.location.address);
+
+  if (params.project_id) {
+    console.log("yes");
+    var api = "https://pageuptechnologies.com/api/uploadImg";
+  } else {
+    console.log("no");
+    var api = "https://pageuptechnologies.com/api/testApi";
+  }
+
+  axios
+    .post(api, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+    .then((res) => {
+      console.log("Image uploaded successfully:", res.data);
+      Alert.alert("Success", "Photo Saved Successfully", [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+      ]);
+      return "Success";
+
+    })
+    .catch((err) => {
+      console.log(err.response);
+      Alert.alert("Error", "Something went wrongb", [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+      ]);
+    });
 };
 
 const saveImage = (source, fileName, mime) => {
@@ -273,14 +338,10 @@ const saveImage = (source, fileName, mime) => {
 
 const addImage = (source, filePath, mime) => {
   RNFetchBlob.fs
-    .createFile(filePath, source, "base64")
+    .writeFile(filePath, source, "base64")
     .then((res) => {
       console.log("success==>>", res);
-
       console.log("otokhan==>", filePath, mime);
-
-      // getExifInfo(filePath);
-
       RNFetchBlob.fs.scanFile([{ path: filePath, mime: mime }]).then((res) => {
         console.log("mime scan", res);
       });
@@ -345,32 +406,5 @@ const uploadImage = async (formData) => {
     ]);
   }
 };
-
-// return (
-//   <>
-//     <Card>
-//       <Pressable
-//         onPress={handleOpenCamera}
-//         style={{ backgroundColor: "gray", height: 150, padding: 40 }}
-//       >
-//         <Icon
-//           name="camera"
-//           size={60}
-//           color={"white"}
-//           style={{ textAlign: "center" }}
-//         />
-//         <Text style={{ textAlign: "center", color: "white" }}>
-//           Open Camera
-//         </Text>
-//       </Pressable>
-
-//       <View>
-//         <Button title="Open Gallary" onPress={browseGallery} />
-//       </View>
-//     </Card>
-//   </>
-// );
-
-// };
 
 export { browseGallery, handleOpenCamera };

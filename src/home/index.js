@@ -2,46 +2,129 @@ import React, { useEffect, useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
-  StyleSheet,
-  // Text,
-  useColorScheme,
   View,
   Button,
-  PermissionsAndroid,
   Pressable,
   Image,
+  Alert
 } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { Card, Text, Divider, Badge } from "@rneui/themed";
-import Geolocation from "react-native-geolocation-service";
-import opencage from "opencage-api-client";
 import { browseGallery, handleOpenCamera } from "./camera";
-import Address from "./address";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../redux/index";
+import axios from "axios";
+import OverlayLoading from "../component/loader";
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const coords = useSelector((state) => state.location);
   const { fetchLocation } = bindActionCreators(actionCreators, dispatch);
+  const [user, setUser] = useState();
+  const [loader, setLoader] = useState({
+    open: false,
+    text: ''
+  })
 
   useEffect(() => {
+    retrieveData();
     fetchLocation();
   }, [coords.latitude]);
 
+  const retrieveData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("user");
+      if (value !== null) {
+        // We have data!!
+        setUser(JSON.parse(value));
+        console.log("==>>", JSON.parse(value).id);
+      }
+    } catch (error) {
+      console.log("error", error);
+      // Error retrieving data
+    }
+  };
+
+  const openCamera = async () => {
+    var result = await handleOpenCamera();
+    console.log("result here========>>", result.didCancel);
+    if (result.didCancel) {
+      console.log("User cancelled image picker");
+    } else if (result.error) {
+      console.log("ImagePicker Error: ", response.error);
+    }
+    else{
+      var img = result.assets[0];
+      uploadToServer(img);
+    }
+  };
+
+  const uploadToServer = (img) => {
+    setLoader({
+      open: true,
+      text: 'Uploading..'
+  });
+    const formData = new FormData();
+    formData.append("image", {
+      uri: img.uri,
+      type: img.type,
+      name: img.fileName,
+    });
+    formData.append("project_id", null);
+    formData.append("user_id", user?.id);
+    formData.append("GPSLatitude", coords.latitude);
+    formData.append("GPSLongitude", coords.longitude);
+    formData.append("address", coords.address);
+
+    // if (project_id) {
+    //   var api = "https://pageuptechnologies.com/api/uploadImg";
+    // } else {
+      
+      var api = "https://pageuptechnologies.com/api/testApi";
+    // }
+
+    axios
+      .post(api, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log("Image uploaded successfully:", res.data);
+        Alert.alert("Success", "Photo Saved Successfully", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
+        setLoader({
+          open: false
+      });
+        return "Success";
+      })
+      .catch((err) => {
+        console.log(err.response);
+        Alert.alert("Error", "Something went wrongb", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
+      });
+  };
+
   return (
     <ScrollView>
-
+      <OverlayLoading visible={loader.open} text={loader.text}/>
       <View style={{ backgroundColor: "wheat", padding: 12 }}>
         <Text>Latitude: {coords.latitude}</Text>
         <Text>Longitude: {coords.longitude}</Text>
         <Text>
-          {console.log("====saiaaa==>>", coords)}
+          {/* {console.log("====saiaaa==>>", coords)} */}
           Address: {coords.address}
         </Text>
         <Pressable onPress={() => fetchLocation()}>
@@ -60,7 +143,8 @@ const Home = ({ navigation }) => {
 
       <Card>
         <Pressable
-          onPress={() => handleOpenCamera(null, null)}
+          onPress={() => openCamera()}
+          // onPress={() => handleOpenCamera({project_id: null, location: coords, user_id: user?.id})}
           style={{ backgroundColor: "gray", height: 150, padding: 40 }}
         >
           <Icon
@@ -77,7 +161,8 @@ const Home = ({ navigation }) => {
         <View>
           <Button
             title="Open Gallary"
-            onPress={() => browseGallery("not upload")}
+            onPress={() => navigation.navigate("Gallery")}
+            // onPress={() => browseGallery("not upload")}
           />
         </View>
         {/* <View>

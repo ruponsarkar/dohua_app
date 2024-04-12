@@ -5,7 +5,7 @@ const initialState = {
   };
 
   const getUser = (state = initialState, action) =>{
-      console.log("action", action);
+    //   console.log("action", action);
     if(action.type == 'login'){
         return {
             ...state,
