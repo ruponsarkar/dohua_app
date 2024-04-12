@@ -145,7 +145,7 @@ const Home = ({ navigation }) => {
           <View style={styles.imageContainer}>
             <Image
               source={require("../assets/Gatishakti.jpg")}
-              style={{width: 160, height: 45}}
+              style={{ width: 160, height: 45 }}
             />
           </View>
           {/* Add more images as needed */}
@@ -187,32 +187,31 @@ const Home = ({ navigation }) => {
         </View> */}
       </Card>
 
+<View style={{paddingBottom: 20}}>
+
+
       <Card>
         <View>
           <Card>
-            <Text>Total Projects: 20</Text>
+            <Text style={{fontSize: 18}}>
+              <MaterialCommunityIcons name="circle-multiple" size={22} color={'blue'}/> Total
+              Projects: 20
+            </Text>
           </Card>
           <Card>
-            <Text>Completed Projects: 20</Text>
+            <Text style={{fontSize: 18}}>
+              <MaterialCommunityIcons name="circle-slice-8" size={22} color={'blue'}/>{" "}
+              Completed Projects: 10
+            </Text>
           </Card>
           <Card>
-            <Text>Ongoing Projects: 20</Text>
+            <Text style={{fontSize: 18}}>
+              <MaterialCommunityIcons name="circle-slice-5" size={22} color={'blue'}/> Ongoing Projects: 10
+            </Text>
           </Card>
         </View>
       </Card>
-
-      {/* <Card>
-        <View>
-          <Text>{address.address}</Text>
-          
-          <Text>Latitude: {location ? location.coords.latitude : null}</Text>
-          <Text>Longitude: {location ? location.coords.longitude : null}</Text>
-        </View>
-
-        <View>
-            <Button title="Refresh Location" onPress={getLocation} />
-          </View>
-      </Card> */}
+      </View>
     </ScrollView>
   );
 };

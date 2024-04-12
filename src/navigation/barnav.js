@@ -76,7 +76,7 @@ function TabNav() {
           headerShown: false,
           tabBarLabel: "Project List",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <MaterialCommunityIcons name="format-list-bulleted-type" color={color} size={size} />
           ),
         }}
       />

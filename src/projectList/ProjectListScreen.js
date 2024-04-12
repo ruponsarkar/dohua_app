@@ -162,7 +162,7 @@ const ProjectListScreen = ({ navigation }) => {
           borderRadius: 10,
         }}
         containerStyle={{
-          width: 200,
+          // width: 200,
           marginHorizontal: 50,
           marginVertical: 10,
         }}
@@ -192,7 +192,7 @@ const ProjectListScreen = ({ navigation }) => {
           borderRadius: 10,
         }}
         containerStyle={{
-          width: 200,
+          // width: 200,
           marginHorizontal: 50,
           marginVertical: 10,
         }}
