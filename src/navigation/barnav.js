@@ -28,7 +28,7 @@ const ProjectListNav=()=>{
       <Stack.Screen
         name="Gallery"
         component={Gallery}
-        options={{ headerShown: true, gestureStart: true, title : 'Gallerys' }}
+        options={{ headerShown: true, gestureStart: true, title : 'Gallery' }}
       />
     </Stack.Navigator>
   );

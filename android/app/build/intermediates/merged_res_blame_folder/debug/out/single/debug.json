@@ -1,102 +1,86 @@
 [
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sth.app-main-41:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnativeratings_dist_images_heart.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnativeratings_dist_images_heart.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.sth.app-merged_res-40:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.sth.app-main-42:/drawable/rn_edit_text_material.xml"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_src_assets_logo.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/src_assets_logo.png"
+        "merged": "com.sth.app-merged_res-40:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.sth.app-main-42:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeratings_dist_images_bell.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnativeratings_dist_images_bell.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.sth.app-main-42:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_src_assets_gatishakti.jpg.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/src_assets_gatishakti.jpg"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sth.app-main-41:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_src_assets_logo.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/src_assets_logo.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnativeratings_dist_images_star.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnativeratings_dist_images_star.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeratings_dist_images_rocket.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnativeratings_dist_images_rocket.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnativeratings_dist_images_airbnbstar.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnativeratings_dist_images_airbnbstar.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.sth.app-main-42:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable_rn_edit_text_material.xml.flat",
-        "source": "com.sth.app-main-41:/drawable/rn_edit_text_material.xml"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_src_assets_image_aiidclogo.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/src_assets_image_aiidclogo.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.sth.app-main-42:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnativeratings_dist_images_airbnbstarselected.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnativeratings_dist_images_airbnbstarselected.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sth.app-main-41:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "com.sth.app-merged_res-40:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.sth.app-main-42:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeratings_dist_images_airbnbstarselected.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnativeratings_dist_images_airbnbstarselected.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeratings_dist_images_airbnbstar.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnativeratings_dist_images_airbnbstar.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnativeratings_dist_images_rocket.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnativeratings_dist_images_rocket.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.sth.app-merged_res-40:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.sth.app-main-42:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnativeratings_dist_images_bell.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnativeratings_dist_images_bell.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.sth.app-merged_res-40:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.sth.app-main-42:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.sth.app-main-42:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_src_assets_image_aiidclogo.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/src_assets_image_aiidclogo.png"
+        "merged": "com.sth.app-merged_res-40:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.sth.app-main-42:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.sth.app-merged_res-39:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.sth.app-main-41:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
-    },
-    {
-        "merged": "com.sth.app-merged_res-39:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeratings_dist_images_heart.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnativeratings_dist_images_heart.png"
-    },
-    {
-        "merged": "com.sth.app-merged_res-39:/drawable-mdpi_node_modules_reactnativeratings_dist_images_star.png.flat",
-        "source": "com.sth.app-main-41:/drawable-mdpi/node_modules_reactnativeratings_dist_images_star.png"
-    },
-    {
-        "merged": "com.sth.app-merged_res-39:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.sth.app-main-41:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.sth.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.sth.app-main-42:/mipmap-xxxhdpi/ic_launcher.png"
     }
 ]

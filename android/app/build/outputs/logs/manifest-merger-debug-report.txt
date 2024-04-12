@@ -11,6 +11,7 @@ MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Docum
 MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-31:12
 MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
@@ -44,6 +45,8 @@ MERGED from [com.google.android.material:material:1.9.0] /Users/ruponsarkar/.gra
 MERGED from [com.facebook.stetho:stetho:1.6.0] /Users/ruponsarkar/.gradle/caches/transforms-3/07d7c371ac06ab970dc33279314e8d16/transformed/jetified-stetho-1.6.0/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/ruponsarkar/.gradle/caches/transforms-3/dd997c22ecb777a9e0898386a3d502a5/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/ruponsarkar/.gradle/caches/transforms-3/b3627ca143232ec2ceb6e319eb18971d/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:2:1-16:12
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/a1dfa8dfd43842ae90a1a412797e0998/transformed/jetified-glide-4.12.0/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.android.gms:play-services-location:18.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/11c15af12ef96f8697638bb46980c84f/transformed/jetified-play-services-location-18.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:17.5.0] /Users/ruponsarkar/.gradle/caches/transforms-3/19ec269da49c6c76309942cfa013a60d/transformed/jetified-play-services-base-17.5.0/AndroidManifest.xml:17:1-29:12
@@ -83,6 +86,7 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/ruponsarkar/.gra
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/ruponsarkar/.gradle/caches/transforms-3/c2c67d6ef97116786f5e00cacbb4d36d/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/8e642d0218a62e2463dc98bf97fe4741/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework:2.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/424bb7f5e8999507734fb924a0875fe1/transformed/sqlite-framework-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6c2207d681f92241f862a15595e91acb/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5b9668a697a30efe2c2676a2ef171ba3/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6119c53d075509c7c00b74ccdeb41c3b/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/0533ea7e787d4330488437d8f040f117/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
@@ -174,6 +178,10 @@ MERGED from [com.facebook.stetho:stetho:1.6.0] /Users/ruponsarkar/.gradle/caches
 MERGED from [com.facebook.stetho:stetho:1.6.0] /Users/ruponsarkar/.gradle/caches/transforms-3/07d7c371ac06ab970dc33279314e8d16/transformed/jetified-stetho-1.6.0/AndroidManifest.xml:11:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/ruponsarkar/.gradle/caches/transforms-3/dd997c22ecb777a9e0898386a3d502a5/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/ruponsarkar/.gradle/caches/transforms-3/dd997c22ecb777a9e0898386a3d502a5/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:10:5-14:19
+MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:10:5-14:19
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/a1dfa8dfd43842ae90a1a412797e0998/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/a1dfa8dfd43842ae90a1a412797e0998/transformed/jetified-glide-4.12.0/AndroidManifest.xml:10:5-20
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-location:18.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/11c15af12ef96f8697638bb46980c84f/transformed/jetified-play-services-location-18.0.0/AndroidManifest.xml:7:5-20
@@ -196,6 +204,8 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ruponsarkar/.gradle/
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ruponsarkar/.gradle/caches/transforms-3/57875db857c52963776a564122dcb84b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6c2207d681f92241f862a15595e91acb/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6c2207d681f92241f862a15595e91acb/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5b9668a697a30efe2c2676a2ef171ba3/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5b9668a697a30efe2c2676a2ef171ba3/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/ruponsarkar/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:11:5-15:19
@@ -273,6 +283,8 @@ MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/project
 MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
@@ -339,6 +351,10 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/ruponsarka
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/ruponsarkar/.gradle/caches/transforms-3/dd997c22ecb777a9e0898386a3d502a5/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/ruponsarkar/.gradle/caches/transforms-3/b3627ca143232ec2ceb6e319eb18971d/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/ruponsarkar/.gradle/caches/transforms-3/b3627ca143232ec2ceb6e319eb18971d/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/a1dfa8dfd43842ae90a1a412797e0998/transformed/jetified-glide-4.12.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/a1dfa8dfd43842ae90a1a412797e0998/transformed/jetified-glide-4.12.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-location:18.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/11c15af12ef96f8697638bb46980c84f/transformed/jetified-play-services-location-18.0.0/AndroidManifest.xml:5:5-44
@@ -417,6 +433,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ruponsarkar/.gradl
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/8e642d0218a62e2463dc98bf97fe4741/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/424bb7f5e8999507734fb924a0875fe1/transformed/sqlite-framework-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite-framework:2.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/424bb7f5e8999507734fb924a0875fe1/transformed/sqlite-framework-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6c2207d681f92241f862a15595e91acb/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6c2207d681f92241f862a15595e91acb/transformed/jetified-gifdecoder-4.12.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5b9668a697a30efe2c2676a2ef171ba3/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5b9668a697a30efe2c2676a2ef171ba3/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/6119c53d075509c7c00b74ccdeb41c3b/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
@@ -527,6 +545,12 @@ ADDED from [com.facebook.react:react-android:0.73.1] /Users/ruponsarkar/.gradle/
 		ADDED from [com.facebook.react:react-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/65f520f887f0d0f390437980af8cd371/transformed/jetified-react-android-0.73.1-debug/AndroidManifest.xml:21:13-37
 	android:name
 		ADDED from [com.facebook.react:react-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/65f520f887f0d0f390437980af8cd371/transformed/jetified-react-android-0.73.1-debug/AndroidManifest.xml:20:13-77
+meta-data#com.bumptech.glide.integration.okhttp3.OkHttpGlideModule
+ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
+	android:value
+		ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:13:13-40
+	android:name
+		ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:12:13-84
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:23:5-82
 	android:name
