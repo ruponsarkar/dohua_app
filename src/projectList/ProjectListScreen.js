@@ -154,6 +154,18 @@ const ProjectListScreen = ({ navigation }) => {
       <Text style={styles.projectDescription}>{item.description}</Text>
       <Text style={{ flexDirection: "row", flex: 1, textAlign: "center" }}>
         <Button
+        size="sm"
+        buttonStyle={{
+          backgroundColor: 'rgba(90, 154, 230, 1)',
+          borderColor: 'transparent',
+          borderWidth: 0,
+          borderRadius: 10,
+        }}
+        containerStyle={{
+          // width: 200,
+          marginHorizontal: 50,
+          marginVertical: 10,
+        }}
           onPress={() =>
             navigation.navigate("Gallery", {
               projectId: item.id,
@@ -171,6 +183,19 @@ const ProjectListScreen = ({ navigation }) => {
         </Button>{" "}
         &nbsp;
         <Button 
+        size="sm"
+
+        buttonStyle={{
+          backgroundColor: 'rgba(199, 43, 98, 1)',
+          borderColor: 'transparent',
+          borderWidth: 0,
+          borderRadius: 10,
+        }}
+        containerStyle={{
+          // width: 200,
+          marginHorizontal: 50,
+          marginVertical: 10,
+        }}
         // onPress={() => handleOpenCamera(item.id, location)}
         onPress={() => openCamera(item.id)}
         >

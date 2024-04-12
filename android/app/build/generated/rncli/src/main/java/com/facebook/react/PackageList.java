@@ -19,6 +19,8 @@ import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.reactnativedocumentpicker.RNDocumentPickerPackage;
 // react-native-exif
 import com.devialab.exif.RCTExifPackage;
+// react-native-fast-image
+import com.dylanvann.fastimage.FastImageViewPackage;
 // react-native-fs
 import com.rnfs.RNFSPackage;
 // react-native-geolocation-service
@@ -84,6 +86,7 @@ public class PackageList {
       new RNDeviceInfo(),
       new RNDocumentPickerPackage(),
       new RCTExifPackage(),
+      new FastImageViewPackage(),
       new RNFSPackage(),
       new RNFusedLocationPackage(),
       new PickerPackage(),

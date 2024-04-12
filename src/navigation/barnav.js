@@ -28,7 +28,7 @@ const ProjectListNav=()=>{
       <Stack.Screen
         name="Gallery"
         component={Gallery}
-        options={{ headerShown: true, gestureStart: true, title : 'Gallerys' }}
+        options={{ headerShown: true, gestureStart: true, title : 'Gallery' }}
       />
     </Stack.Navigator>
   );
@@ -76,7 +76,7 @@ function TabNav() {
           headerShown: false,
           tabBarLabel: "Project List",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <MaterialCommunityIcons name="format-list-bulleted-type" color={color} size={size} />
           ),
         }}
       />
