@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from 'react'
+import React, {useEffect, useContext, useState} from 'react'
 import {
   
     StyleSheet,
@@ -8,8 +8,6 @@ import {
     Button
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
 // import { AuthContext } from "../navigation/index";
 import { AuthContext } from '../navigation';
 
@@ -18,28 +16,31 @@ import { AuthContext } from '../navigation';
 const Profile = ({navigation}) => {
 
   const { dispatch } = useContext(AuthContext);
-
+const [user, setUser] = useState();
 
   const logout=()=>{
-
     dispatch({
       type: "SIGN_OUT",
     });
-    
     AsyncStorage.clear();
     return;
   }
 
 
-  // const retrieveData = async () => {
-  //   try {
-  //     const value = await AsyncStorage.getItem('user');
-  //     if (value !== null) {
-  //       console.log("value", value);
-  //     }
-  //   } catch (error) {
-  //   }
-  // };
+  const retrieveData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('user');
+      if (value !== null) {
+        console.log("value", value);
+        setUser(JSON.parse(value))
+      }
+    } catch (error) {
+    }
+  };
+
+  useEffect(()=>{
+    retrieveData();
+  },[]);
 
 
 
@@ -61,15 +62,15 @@ const Profile = ({navigation}) => {
       ) : (
         <Image source={require('../assets/image/aiidc-logo.png')} style={styles.profileImage} />
       )}
-      <Text style={styles.username}>John Doe</Text>
+      <Text style={styles.username}>{user?.name}</Text>
       <Text style={styles.bio}>Designation</Text>
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Email:</Text>
-        <Text style={styles.infoText}>john.doe@example.com</Text>
+        <Text style={styles.infoText}>{user?.email}</Text>
       </View>
       <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Location:</Text>
-        <Text style={styles.infoText}>New York, USA</Text>
+        <Text style={styles.infoLabel}>Phone:</Text>
+        <Text style={styles.infoText}>{user?.phone_no}</Text>
       </View>
 
       <View>

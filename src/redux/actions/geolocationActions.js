@@ -10,12 +10,12 @@ import opencage from "opencage-api-client";
 export const fetchLocation = () => {
   return (dispatch) => {
     dispatch({ type: FETCH_LOCATION_REQUEST });
-    console.log("here...........");
+    // console.log("here...........");
     Geolocation.getCurrentPosition(
       (position) => {
         const key = "e1302b58fbc74c14a40fd32f08eb2727";
         const cord = position.coords.latitude + "," + position.coords.longitude;
-        console.log(".....here2........", cord);
+        // console.log(".....here2........", cord);
 
         opencage.geocode({ key, q: cord }).then((response) => {
           dispatch({

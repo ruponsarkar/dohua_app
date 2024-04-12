@@ -6,6 +6,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import ProjectListScreen from "../projectList/ProjectListScreen";
 import ProjectDetailsScreen from "../ProjectDetails/projectDetails";
 import Profile from "../profile";
+import Gallery from "../gallery";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -24,6 +25,30 @@ const ProjectListNav=()=>{
         component={ProjectDetailsScreen}
         options={{ headerShown: true, gestureStart: true, title : 'Project Details' }}
       />
+      <Stack.Screen
+        name="Gallery"
+        component={Gallery}
+        options={{ headerShown: true, gestureStart: true, title : 'Gallerys' }}
+      />
+    </Stack.Navigator>
+  );
+
+}
+
+
+const HomeNav=()=>{
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: true, gestureStart: true, title: "Home" }}
+      />
+      <Stack.Screen
+        name="Gallery"
+        component={Gallery}
+        options={{ headerShown: true, gestureStart: true, title : 'Gallery' }}
+      />
     </Stack.Navigator>
   );
 
@@ -35,9 +60,10 @@ function TabNav() {
     <Tab.Navigator>
       <Tab.Screen
         name="Home Page"
-        component={HomeScreen}
+        component={HomeNav}
         options={{
-          tabBarLabel: "Home",
+          // tabBarLabel: "Home",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
@@ -55,7 +81,7 @@ function TabNav() {
         }}
       />
       <Tab.Screen
-        name="Profiles"
+        name="Profile"
         component={Profile}
         options={{
           tabBarLabel: "Profile",

@@ -40,8 +40,10 @@ const Login = ({ navigation }) => {
 
     const requestData = {
       requestObject: {
-        email: "cpphookan.acs@assam.gov.in",
-        password: "Chinmoy#123",
+        email: email,
+        password: password,
+        // email: "cpphookan.acs@assam.gov.in",
+        // password: "Chinmoy#123",
       },
     };
 
@@ -58,7 +60,21 @@ const Login = ({ navigation }) => {
       );
 
       var user = response.data.message.usr;
-      console.log("==>>", JSON.stringify(user));
+      // console.log("response==>>", response);
+      console.log("res==>>", JSON.stringify(user));
+
+      if(!JSON.stringify(user)){
+        console.log("login error");
+        Alert.alert("Login failed !", "Wrong Email or Password ", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
+        return;
+      }
+
+
       var data = [
         ["user", JSON.stringify(user)],
         ["userToken", user?.email],
@@ -82,16 +98,7 @@ const Login = ({ navigation }) => {
     }
   };
 
-  const storeData = async (token) => {
-    try {
-      await AsyncStorage.setItem("token", token);
-      console.log("token saved");
-      navigation.navigate("Home");
-    } catch (error) {
-      // Error saving data
-      console.log("error store token", error);
-    }
-  };
+
 
   return (
     <View style={styles.container}>
