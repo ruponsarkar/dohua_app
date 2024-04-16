@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.sth.app-mergeDebugResources-34:/values-cb/values-cb.xml",
+            "outputFile": "com.sth.app-mergeDebugResources-37:/values-cb/values-cb.xml",
             "map": [
                 {
-                    "source": "/Users/ruponsarkar/.gradle/caches/transforms-3/65f520f887f0d0f390437980af8cd371/transformed/jetified-react-android-0.73.1-debug/res/values-cb/values-cb.xml",
+                    "source": "C:\\Users\\arnab\\.gradle\\caches\\transforms-3\\65f520f887f0d0f390437980af8cd371\\transformed\\jetified-react-android-0.73.1-debug\\res\\values-cb\\values-cb.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

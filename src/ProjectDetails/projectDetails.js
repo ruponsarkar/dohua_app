@@ -14,9 +14,10 @@ const ProjectDetailsScreen = () => {
 
   // Sample image gallery data
   const imageGallery = [
+
     { id: '1', source: require('../assets/image/aiidc-logo.png') },
     { id: '2', source: require('../assets/image/aiidc-logo.png') },
-    { id: '3', source: require('../assets/image/aiidc-logo.png') },
+    { id: '3', source: require('../assets/image/aiidc-logo.png')  },
     // Add more images as needed
   ];
 
@@ -47,11 +48,11 @@ const ProjectDetailsScreen = () => {
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Start Date:</Text>
-        <Text style={styles.detailsText}>{projectDetails.startDate}</Text>
+        <Text style={styles.detailsText}>{projectDetails.actual_start}</Text>
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>End Date:</Text>
-        <Text style={styles.detailsText}>{projectDetails.endDate}</Text>
+        <Text style={styles.detailsText}>{projectDetails.actual_end}</Text>
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Client:</Text>
