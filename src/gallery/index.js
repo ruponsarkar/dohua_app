@@ -196,8 +196,10 @@ const styles = StyleSheet.create({
     height: (width - 32) / 2, // Adjust image size based on the number of columns
     margin: 2,
     borderRadius: 8,
-    borderWidth: 1,
+    backgroundColor:"#ede8e8",
+    borderWidth: 2,
     borderColor: '#ede8e8',
+    
     // padding: 30
   },
 });

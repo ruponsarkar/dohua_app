@@ -7,6 +7,7 @@ import ProjectListScreen from "../projectList/ProjectListScreen";
 import ProjectDetailsScreen from "../ProjectDetails/projectDetails";
 import Profile from "../profile";
 import Gallery from "../gallery";
+import AddProject from "../projectList/addProject";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -29,6 +30,11 @@ const ProjectListNav=()=>{
         name="Gallery"
         component={Gallery}
         options={{ headerShown: true, gestureStart: true, title : 'Gallery' }}
+      />
+      <Stack.Screen
+        name="AddProject"
+        component={AddProject}
+        options={{ headerShown: true, gestureStart: true, title : 'Add Project' }}
       />
     </Stack.Navigator>
   );
