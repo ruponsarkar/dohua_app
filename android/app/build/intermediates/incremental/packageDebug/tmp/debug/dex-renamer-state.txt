@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 #Wed Apr 10 12:26:06 IST 2024
+=======
+#Tue Apr 16 18:15:23 IST 2024
+base.0=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
+base.4=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+base.5=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=0/classes.dex
+path.3=14/classes.dex
+>>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
 path.4=6/classes.dex
 path.3=14/classes.dex
 path.2=0/classes.dex

@@ -1,65 +1,46 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext, useState} from 'react'
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
+  
     StyleSheet,
     Text,
-    useColorScheme,
     View,
     Image,
     Button
 } from 'react-native';
-import { DevSettings } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../redux/index";
+// import { AuthContext } from "../navigation/index";
+import { AuthContext } from '../navigation';
+
 
 
 const Profile = ({navigation}) => {
 
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const { removeToken } = bindActionCreators(actionCreators, dispatch);
+  const { dispatch } = useContext(AuthContext);
+const [user, setUser] = useState();
 
-  useEffect(()=>{
-    retrieveData()
-  },[]);
+  const logout=()=>{
+    dispatch({
+      type: "SIGN_OUT",
+    });
+    AsyncStorage.clear();
+    return;
+  }
 
-     const retrieveData = async () => {
+
+  const retrieveData = async () => {
     try {
-      const value = await AsyncStorage.getItem('token');
-      console.log(value);
+      const value = await AsyncStorage.getItem('user');
       if (value !== null) {
-        console.log("token", value);
-        setToken(value)
+        console.log("value", value);
+        setUser(JSON.parse(value))
       }
     } catch (error) {
-      console.log("error to get token", error);
     }
   };
 
-  const logout=()=>{
-    // removeToken();
-
-    removeToken(null, null)
-
-    removeItemValue();
-    
-  }
-
-  const  removeItemValue = async()=> {
-    try {
-        await AsyncStorage.removeItem('token');
-        console.log("removed");
-        return true;
-      }
-      catch(exception) {
-      console.log("error", exception);
-        return false;
-    }
-}
+  useEffect(()=>{
+    retrieveData();
+  },[]);
 
 
 
@@ -81,15 +62,15 @@ const Profile = ({navigation}) => {
       ) : (
         <Image source={require('../assets/image/aiidc-logo.png')} style={styles.profileImage} />
       )}
-      <Text style={styles.username}>John Doe</Text>
+      <Text style={styles.username}>{user?.name}</Text>
       <Text style={styles.bio}>Designation</Text>
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Email:</Text>
-        <Text style={styles.infoText}>john.doe@example.com</Text>
+        <Text style={styles.infoText}>{user?.email}</Text>
       </View>
       <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Location:</Text>
-        <Text style={styles.infoText}>New York, USA</Text>
+        <Text style={styles.infoLabel}>Phone:</Text>
+        <Text style={styles.infoText}>{user?.phone_no}</Text>
       </View>
 
       <View>

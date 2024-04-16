@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.sth.app-mergeDebugResources-37:/values-so/values-so.xml",
+=======
+            "outputFile": "com.sth.app-mergeDebugResources-38:/values-so/values-so.xml",
+>>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
             "map": [
                 {
                     "source": "C:\\Users\\arnab\\.gradle\\caches\\transforms-3\\65f520f887f0d0f390437980af8cd371\\transformed\\jetified-react-android-0.73.1-debug\\res\\values-so\\values-so.xml",

@@ -1,17 +1,59 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, FlatList } from 'react-native';
-import { useRoute } from '@react-navigation/native';
-
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
+import { useRoute } from "@react-navigation/native";
+import axios from "axios";
+import FastImage from 'react-native-fast-image'
 
 const ProjectDetailsScreen = () => {
   // Sample project details
   const route = useRoute();
 
-  const { project } = route.params; 
+  const { project } = route.params;
 
   console.log("project", project);
-  const projectDetails = project
+  const projectDetails = project;
 
+  const [img, setImg] = useState([]);
+  const [loader, setLoader] = useState({
+    open: false,
+    text: "",
+  });
+  useEffect(() => {
+    getImgByProject();
+  }, []);
+
+  const getImgByProject = () => {
+    setLoader({
+      open: true,
+      text: "Please Wait",
+    });
+    axios
+      .get(
+        "https://pageuptechnologies.com/api/getImgByProject/" +
+          projectDetails.id
+      )
+      .then((res) => {
+        console.log("resposeIg", res.data.data);
+        setImg(res.data.data);
+        setLoader({
+          open: false,
+        });
+      })
+      .catch((err) => {
+        console.log("err get img", err);
+      });
+  };
+
+
+<<<<<<< HEAD
   // Sample image gallery data
   const imageGallery = [
 
@@ -20,21 +62,30 @@ const ProjectDetailsScreen = () => {
     { id: '3', source: require('../assets/image/aiidc-logo.png')  },
     // Add more images as needed
   ];
+=======
+>>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
 
   // Render each image in the gallery
   const renderImageItem = ({ item }) => (
-    <Image source={item.source} style={styles.imageItem} resizeMode="cover" />
+    // <Image source={item.source} style={styles.imageItem} resizeMode="cover" />
+    <TouchableOpacity onPress={() => console.log("item.image", item.image)}>
+      <Image
+        source={{ uri: `https://pageuptechnologies.com/project/${item.image}` }}
+        style={styles.imageItem}
+        resizeMode={FastImage.resizeMode.cover}
+      />
+    </TouchableOpacity>
   );
 
   // Function to determine status text style based on project status
   const getStatusStyle = (status) => {
     switch (status) {
-      case 'In Progress':
-        return { color: 'orange' };
-      case 'Completed':
-        return { color: 'green' };
-      case 'On Hold':
-        return { color: 'red' };
+      case "In Progress":
+        return { color: "orange" };
+      case "Completed":
+        return { color: "green" };
+      case "On Hold":
+        return { color: "red" };
       default:
         return {};
     }
@@ -44,11 +95,17 @@ const ProjectDetailsScreen = () => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.projectName}>{projectDetails.name} </Text>
-        <Text style={styles.projectDescription}>{projectDetails.description}</Text>
+        <Text style={styles.projectDescription}>
+          {projectDetails.description}
+        </Text>
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Start Date:</Text>
+<<<<<<< HEAD
         <Text style={styles.detailsText}>{projectDetails.actual_start}</Text>
+=======
+        <Text style={styles.detailsText}>{projectDetails.wo_date}</Text>
+>>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>End Date:</Text>
@@ -60,13 +117,17 @@ const ProjectDetailsScreen = () => {
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Status:</Text>
-        <Text style={[styles.detailsText, getStatusStyle(projectDetails.status)]}>{projectDetails.status}</Text>
+        <Text
+          style={[styles.detailsText, getStatusStyle(projectDetails.status)]}
+        >
+          {projectDetails.status}
+        </Text>
       </View>
       <View style={styles.imageGallery}>
         <FlatList
-          data={imageGallery}
+          data={img}
           renderItem={renderImageItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
           horizontal
           showsHorizontalScrollIndicator={false}
         />
@@ -78,7 +139,7 @@ const ProjectDetailsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
     paddingHorizontal: 15,
     paddingTop: 20,
   },
@@ -87,20 +148,20 @@ const styles = StyleSheet.create({
   },
   projectName: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   projectDescription: {
     fontSize: 16,
-    color: '#666666',
+    color: "#666666",
   },
   detailsContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginBottom: 10,
   },
   detailsLabel: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginRight: 10,
   },
   detailsText: {
@@ -112,9 +173,12 @@ const styles = StyleSheet.create({
   },
   imageItem: {
     width: 150,
-    height: 150,
+    height: 190,
     borderRadius: 10,
     marginRight: 10,
+    backgroundColor:"#ede8e8",
+    borderWidth: 2,
+    borderColor: '#ede8e8',
   },
 });
 

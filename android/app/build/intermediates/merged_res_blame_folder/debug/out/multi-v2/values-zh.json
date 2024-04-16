@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "com.sth.app-mergeDebugResources-37:/values-zh/values-zh.xml",
+=======
+            "outputFile": "com.sth.app-mergeDebugResources-38:/values-zh/values-zh.xml",
+>>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
             "map": [
                 {
                     "source": "C:\\Users\\arnab\\.gradle\\caches\\transforms-3\\0d5200e7c6f2e02eefb8483dce46a169\\transformed\\jetified-ucrop-2.2.6-native\\res\\values-zh\\values-zh.xml",
