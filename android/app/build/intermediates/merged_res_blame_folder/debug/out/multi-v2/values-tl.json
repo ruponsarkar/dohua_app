@@ -1,11 +1,7 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
-            "outputFile": "com.sth.app-mergeDebugResources-37:/values-tl/values-tl.xml",
-=======
             "outputFile": "com.sth.app-mergeDebugResources-38:/values-tl/values-tl.xml",
->>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
             "map": [
                 {
                     "source": "C:\\Users\\arnab\\.gradle\\caches\\transforms-3\\13659b94c66de92d98d7f8af61234b95\\transformed\\core-1.9.0\\res\\values-tl\\values-tl.xml",

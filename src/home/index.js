@@ -144,22 +144,7 @@ const Home = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <OverlayLoading visible={loader.open} text={loader.text} />
-      <View style={{ backgroundColor: "wheat", padding: 12 }}>
-        <Text>Latitude: {coords.latitude}</Text>
-        <Text>Longitude: {coords.longitude}</Text>
-        <Text>
-          {/* {console.log("====saiaaa==>>", coords)} */}
-          Address: {coords.address}
-        </Text>
-        <Pressable onPress={() => fetchLocation()}>
-          <Text style={{ textAlign: "center" }}>
-            <MaterialCommunityIcons name="reload" size={22} />
-          </Text>
-        </Pressable>
-      </View>
-
-      <Card>
+      <Card containerStyle={{ margin: 0}}>
         <View style={styles.container}>
           <View style={styles.imageContainer}>
             <Image
@@ -180,14 +165,31 @@ const Home = ({ navigation }) => {
           State Data Center Dispur
         </Text>
       </Card>
+      
+      <OverlayLoading visible={loader.open} text={loader.text} />
+      <View style={{ backgroundColor: "wheat", padding: 12 }}>
+        <Text>Latitude: {coords.latitude}</Text>
+        <Text>Longitude: {coords.longitude}</Text>
+        <Text>
+          {/* {console.log("====saiaaa==>>", coords)} */}
+          Address: {coords.address}
+        </Text>
+        <Pressable onPress={() => fetchLocation()}>
+          <Text style={{ textAlign: "center" }}>
+            <MaterialCommunityIcons name="reload" size={22} />
+          </Text>
+        </Pressable>
+      </View>
 
-      <Card>
-        <Pressable
-          onPress={() => openCamera()}
-          // onPress={() => handleOpenCamera({project_id: null, location: coords, user_id: user?.id})}
-          style={{ backgroundColor: "gray", height: 150, padding: 40 }}
-        >
-          <Icon
+      
+
+
+      <Card containerStyle={{ margin: 0}}>
+      <View style={styles.boxContainer}>
+      <View style={styles.box}>
+      <Pressable
+          onPress={() => openCamera()}>
+      <Icon
             name="camera"
             size={60}
             color={"white"}
@@ -196,47 +198,72 @@ const Home = ({ navigation }) => {
           <Text style={{ textAlign: "center", color: "white" }}>
             Open Camera
           </Text>
-        </Pressable>
-
-        <View>
-          <Button
-            title="Open Gallary"
-            onPress={() => navigation.navigate("Gallery")}
-            // onPress={() => browseGallery("not upload")}
-          />
-        </View>
-        {/* <View>
-          <Button title="Open haha" 
-          onPress={haha}
-           />
-        </View> */}
-      </Card>
-
-<View style={{paddingBottom: 20}}>
-
-
-      <Card>
-        <View>
-          <Card>
-            <Text style={{fontSize: 18}}>
-              <MaterialCommunityIcons name="circle-multiple" size={22} color={'blue'}/> Total
-              Projects: 20
-            </Text>
-          </Card>
-          <Card>
-            <Text style={{fontSize: 18}}>
-              <MaterialCommunityIcons name="circle-slice-8" size={22} color={'blue'}/>{" "}
-              Completed Projects: 10
-            </Text>
-          </Card>
-          <Card>
-            <Text style={{fontSize: 18}}>
-              <MaterialCommunityIcons name="circle-slice-5" size={22} color={'blue'}/> Ongoing Projects: 10
-            </Text>
-          </Card>
-        </View>
-      </Card>
+          </Pressable>
       </View>
+      <View style={styles.box}>
+      <Pressable onPress={() => navigation.navigate("Gallery")}>
+      <MaterialCommunityIcons
+            name="image-multiple-outline"
+            size={60}
+            color={"white"}
+            style={{ textAlign: "center" }}
+          />
+          <Text style={{ textAlign: "center", color: "white" }}>
+            Open Gallery
+          </Text>
+          </Pressable>
+      </View>
+    </View>
+    </Card>
+
+
+<View>
+<Card containerStyle={{ margin: 0}}>
+          <Text style={{fontSize: 20, textAlign: 'center', fontWeight: 'bold'}}>
+            Projects Details
+          </Text>
+          <Card containerStyle={{ borderRadius: 10, backgroundColor: '#B0E0E6' }}>
+            <View style={styles.projectContainer}>
+              <View style={styles.leftTextContainer}>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                  <MaterialCommunityIcons name="circle-multiple" size={25} color={'black'}/> Total
+                  Projects:
+                </Text>
+              </View>
+              <View style={styles.rightTextContainer}>
+                <Text style={styles.text}>30</Text>
+              </View>
+            </View>
+          </Card>
+          <Card containerStyle={{ borderRadius: 10, backgroundColor: '#FFFACD' }}>
+          <View style={styles.projectContainer}>
+              <View style={styles.leftTextContainer}>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                  <MaterialCommunityIcons name="timer-sand-complete" size={25} color={'black'}/> Ongoing
+                  Projects:
+                </Text>
+              </View>
+              <View style={styles.rightTextContainer}>
+                <Text style={styles.text}>10</Text>
+              </View>
+            </View>
+          </Card>
+          <Card containerStyle={{ borderRadius: 10, backgroundColor: '#90EE90' }}>
+          <View style={styles.projectContainer}>
+              <View style={styles.leftTextContainer}>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                  <MaterialCommunityIcons name="check-circle-outline" size={25} color={'black'}/> Completed
+                  Projects:
+                </Text>
+              </View>
+              <View style={styles.rightTextContainer}>
+                <Text style={styles.text}>10</Text>
+              </View>
+            </View>
+          </Card>
+          </Card>
+        </View>
+      
     </ScrollView>
   );
 };
@@ -255,6 +282,39 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     resizeMode: "cover",
+  },
+  boxContainer: {
+    flexDirection: 'row', // Arrange children horizontally
+    justifyContent: 'space-between', // Distribute children evenly along the main axis
+    // paddingHorizontal: 20, // Add some horizontal padding
+  },
+  box: {
+    width: '48%', // Take up 48% of the container's width
+    height: 160,
+    backgroundColor: '#ccc',
+    borderRadius: 10,
+    // marginBottom: 20, // Add some vertical margin
+    padding: 40 
+  },
+  projectContainer: {
+    flexDirection: 'row', // Arrange children horizontally
+    justifyContent: 'space-between', // Distribute children evenly along the main axis
+    // paddingHorizontal: 20, // Add some horizontal padding
+    alignItems: 'center', // Center children vertically
+    height: 50, // Set a fixed height for the container
+  },
+  leftTextContainer: {
+    // flex: 1, // Take up all available space
+    alignItems: 'flex-start', // Align text to the left
+  },
+  rightTextContainer: {
+    flex: 1, // Take up all available space
+    alignItems: 'flex-end', // Align text to the right
+    paddingEnd: 15,
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
 

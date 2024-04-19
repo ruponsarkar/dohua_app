@@ -1,11 +1,7 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
-            "outputFile": "com.sth.app-mergeDebugResources-37:/values-th/values-th.xml",
-=======
             "outputFile": "com.sth.app-mergeDebugResources-38:/values-th/values-th.xml",
->>>>>>> 5889f8872920a5248c7b5fa282733726dc2878e7
             "map": [
                 {
                     "source": "C:\\Users\\arnab\\.gradle\\caches\\transforms-3\\19ec269da49c6c76309942cfa013a60d\\transformed\\jetified-play-services-base-17.5.0\\res\\values-th\\values.xml",
