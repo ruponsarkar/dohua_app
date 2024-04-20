@@ -34,6 +34,7 @@ import Appss from './src/navigation';
 
 
 
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -44,6 +45,7 @@ type SectionProps = PropsWithChildren<{
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
 
   useEffect(()=>{
     requestLocationPermission();

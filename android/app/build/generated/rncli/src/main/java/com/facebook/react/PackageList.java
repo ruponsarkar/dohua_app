@@ -29,6 +29,8 @@ import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-image-resizer
+import fr.bamlab.rnimageresizer.ImageResizerPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -91,6 +93,7 @@ public class PackageList {
       new RNFusedLocationPackage(),
       new PickerPackage(),
       new ImagePickerPackage(),
+      new ImageResizerPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new VectorIconsPackage(),

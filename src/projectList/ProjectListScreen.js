@@ -5,15 +5,16 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
-  Alert
+  Alert,
 } from "react-native";
 import { Card, Divider, Badge, Button } from "@rneui/themed";
 import Icon from "react-native-vector-icons/Feather";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { browseGallery, handleOpenCamera } from "../home/camera";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import OverlayLoading from "../component/loader";
+// import AddProject from "./addProject";
 
 const ProjectListScreen = ({ navigation }) => {
   const coords = useSelector((state) => state.location);
@@ -22,42 +23,42 @@ const ProjectListScreen = ({ navigation }) => {
   const [user, setUser] = useState();
   const [loader, setLoader] = useState({
     open: false,
-    text: ''
-  })
+    text: "",
+  });
 
   const getProjects = () => {
     setLoader({
       open: true,
-      text: 'Loading Projects..'
-  });
+      text: "Loading Projects..",
+    });
     axios
       .post("http://statedatacenterdispuraiidc.com:9000/api/getAllProjects")
       .then((res) => {
         // console.log("res", res.data);
         setProjects(res.data);
         setLoader({
-          open: false
-      });
+          open: false,
+        });
       })
       .catch((err) => {
-        console.log("error on getProjects", err);
+        console.log("error on getProjects", err.response);
       });
   };
 
   const retrieveData = async () => {
     setLoader({
       open: true,
-      text: 'Loading User Information..'
-  });
+      text: "Loading User Information..",
+    });
     try {
-      const value = await AsyncStorage.getItem('user');
+      const value = await AsyncStorage.getItem("user");
       if (value !== null) {
         // We have data!!
         setUser(JSON.parse(value));
         console.log("==>>", JSON.parse(value).id);
         setLoader({
-          open: false
-      });
+          open: false,
+        });
       }
     } catch (error) {
       console.log("error", error);
@@ -65,32 +66,29 @@ const ProjectListScreen = ({ navigation }) => {
     }
   };
 
-  
   useEffect(() => {
     retrieveData();
     getProjects();
   }, []);
-  
-  
-  const openCamera= async (project_id)=>{
-    var result = await handleOpenCamera()
+
+  const openCamera = async (project_id) => {
+    var result = await handleOpenCamera();
     console.log("result here========>>", result);
     if (result.didCancel) {
       console.log("User cancelled image picker");
     } else if (result.error) {
       console.log("ImagePicker Error: ", response.error);
-    }
-    else{
+    } else {
       var img = result.assets[0];
       uploadToServer(img, project_id);
     }
-  }
+  };
 
   const uploadToServer = (img, project_id) => {
     setLoader({
       open: true,
-      text: 'Uploading...'
-  });
+      text: "Uploading...",
+    });
 
     const formData = new FormData();
     formData.append("image", {
@@ -105,10 +103,10 @@ const ProjectListScreen = ({ navigation }) => {
     formData.append("address", coords.address);
 
     // if (project_id) {
-      var api = "https://pageuptechnologies.com/api/uploadImg";
+    var api = "https://pageuptechnologies.com/api/uploadImg";
     // } else {
-      
-      // var api = "https://pageuptechnologies.com/api/testApi";
+
+    // var api = "https://pageuptechnologies.com/api/testApi";
     // }
 
     axios
@@ -126,8 +124,8 @@ const ProjectListScreen = ({ navigation }) => {
           },
         ]);
         setLoader({
-          open: false
-      });
+          open: false,
+        });
         return "Success";
       })
       .catch((err) => {
@@ -141,9 +139,6 @@ const ProjectListScreen = ({ navigation }) => {
       });
   };
 
-
-
-
   // Render each project item
   const renderItem = ({ item }) => (
     <TouchableOpacity
@@ -154,18 +149,18 @@ const ProjectListScreen = ({ navigation }) => {
       <Text style={styles.projectDescription}>{item.description}</Text>
       <Text style={{ flexDirection: "row", flex: 1, textAlign: "center" }}>
         <Button
-        size="sm"
-        buttonStyle={{
-          backgroundColor: 'rgba(90, 154, 230, 1)',
-          borderColor: 'transparent',
-          borderWidth: 0,
-          borderRadius: 10,
-        }}
-        containerStyle={{
-          // width: 200,
-          marginHorizontal: 50,
-          marginVertical: 10,
-        }}
+          size="sm"
+          buttonStyle={{
+            backgroundColor: "rgba(90, 154, 230, 1)",
+            borderColor: "transparent",
+            borderWidth: 0,
+            borderRadius: 10,
+          }}
+          containerStyle={{
+            // width: 200,
+            marginHorizontal: 50,
+            marginVertical: 10,
+          }}
           onPress={() =>
             navigation.navigate("Gallery", {
               projectId: item.id,
@@ -182,24 +177,22 @@ const ProjectListScreen = ({ navigation }) => {
           />
         </Button>{" "}
         &nbsp;
-        <Button 
-        size="sm"
-
-        buttonStyle={{
-          backgroundColor: 'rgba(199, 43, 98, 1)',
-          borderColor: 'transparent',
-          borderWidth: 0,
-          borderRadius: 10,
-        }}
-        containerStyle={{
-          // width: 200,
-          marginHorizontal: 50,
-          marginVertical: 10,
-        }}
-        // onPress={() => handleOpenCamera(item.id, location)}
-        onPress={() => openCamera(item.id)}
+        <Button
+          size="sm"
+          buttonStyle={{
+            backgroundColor: "rgba(199, 43, 98, 1)",
+            borderColor: "transparent",
+            borderWidth: 0,
+            borderRadius: 10,
+          }}
+          containerStyle={{
+            // width: 200,
+            marginHorizontal: 50,
+            marginVertical: 10,
+          }}
+          // onPress={() => handleOpenCamera(item.id, location)}
+          onPress={() => openCamera(item.id)}
         >
-
           {" "}
           Camera &nbsp;
           <Icon
@@ -222,20 +215,39 @@ const ProjectListScreen = ({ navigation }) => {
     });
   };
 
-
-
   return (
     <>
-    <OverlayLoading visible={loader.open} text={loader.text} />
-    <View style={styles.container}>
-      <FlatList
-        data={projects}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={{ flexGrow: 1 }}
+      <View>
+        <Button
+          size="sm"
+          buttonStyle={{
+            backgroundColor: "rgba(90, 154, 230, 1)",
+            borderColor: "transparent",
+            borderWidth: 0,
+            borderRadius: 10,
+          }}
+          containerStyle={{
+            // width: 200,
+            marginHorizontal: 50,
+            marginVertical: 10,
+          }}
+          onPress={() =>
+            navigation.navigate("AddProject")
+          }
+        >
+         + Add New Project
+        </Button>
+      </View>
+      <OverlayLoading visible={loader.open} text={loader.text} />
+      <View style={styles.container}>
+        <FlatList
+          data={projects}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={{ flexGrow: 1 }}
         />
-    </View>
-        </>
+      </View>
+    </>
   );
 };
 

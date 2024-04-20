@@ -20,6 +20,8 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../redux/index";
 import axios from "axios";
 import OverlayLoading from "../component/loader";
+import ImageResizer from 'react-native-image-resizer';
+
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -63,17 +65,37 @@ const Home = ({ navigation }) => {
     }
   };
 
-  const uploadToServer = (img) => {
+  const uploadToServer = async(img) => {
     setLoader({
       open: true,
-      text: "Uploading..",
+      text: "Saving...",
     });
+
+
+    const resizedImage = await ImageResizer.createResizedImage(
+      img.uri,
+      360, // maxWidth
+      500, // maxHeight
+      'JPEG', // compressFormat
+      80, // quality
+  );
+  // resizedImage.uri contains the URI of the compressed image
+  console.log('Compressed image URI:', resizedImage.uri);
+  console.log('Compressed image:', resizedImage);
+  console.log("==>>", img.type);
+
     const formData = new FormData();
     formData.append("image", {
       uri: img.uri,
       type: img.type,
       name: img.fileName,
     });
+    formData.append("thumb", {
+      uri: resizedImage.uri,
+      type: img.type,
+      name: img.fileName,
+    });
+
     formData.append("project_id", null);
     formData.append("user_id", user?.id);
     formData.append("GPSLatitude", coords.latitude);
@@ -108,6 +130,9 @@ const Home = ({ navigation }) => {
       })
       .catch((err) => {
         console.log(err.response);
+        setLoader({
+          open: false,
+        });
         Alert.alert("Error", "Something went wrongb", [
           {
             text: "Cancel",

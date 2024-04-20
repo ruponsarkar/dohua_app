@@ -18,6 +18,7 @@ export const fetchLocation = () => {
         // console.log(".....here2........", cord);
 
         opencage.geocode({ key, q: cord }).then((response) => {
+          // console.log("response==>>", response);
           dispatch({
             type: FETCH_LOCATION_SUCCESS,
             payload: {

@@ -3,10 +3,12 @@ import { Button, View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Preview from "../gallery/preview";
 
 import Login from "../login/login";
 import TabNav from "./barnav";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import GalleryView from "../gallery";
 
 export const AuthContext = React.createContext();
 const Stack = createNativeStackNavigator();
@@ -14,13 +16,11 @@ const Stack = createNativeStackNavigator();
 export default function App({ navigation }) {
   const isLoggedIn = true;
 
-
-
   const [state, dispatch] = React.useReducer(
     (prevState, action) => {
-        {
-          console.log( "action==>>", action);
-        }
+      {
+        console.log("action==>>", action);
+      }
       switch (action.type) {
         case "RESTORE_TOKEN":
           return {
@@ -59,7 +59,7 @@ export default function App({ navigation }) {
 
       try {
         // userToken = await AsyncStorage.getItemAsync("userToken");
-        const userToken = await AsyncStorage.getItem('userToken');
+        const userToken = await AsyncStorage.getItem("userToken");
         dispatch({ type: "RESTORE_TOKEN", userToken: userToken });
       } catch (e) {
         // Restoring token failed
@@ -69,7 +69,7 @@ export default function App({ navigation }) {
 
       // This will switch to the App screen or Auth screen and this loading
       // screen will be unmounted and thrown away.
-    //   dispatch({ type: "RESTORE_TOKEN", userToken: userToken });
+      //   dispatch({ type: "RESTORE_TOKEN", userToken: userToken });
     };
 
     bootstrapAsync();
@@ -114,7 +114,7 @@ export default function App({ navigation }) {
   );
 
   return (
-    <AuthContext.Provider value={{authContext, dispatch}}>
+    <AuthContext.Provider value={{ authContext, dispatch }}>
       <NavigationContainer>
         <Stack.Navigator>
           {state.userToken ? (
@@ -123,6 +123,24 @@ export default function App({ navigation }) {
                 name="Home"
                 component={TabNav}
                 options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Gallery"
+                component={GalleryView}
+                options={{
+                  headerShown: true,
+                  gestureStart: true,
+                  title: "Gallery",
+                }}
+              />
+              <Stack.Screen
+                name="Preview"
+                component={Preview}
+                options={{
+                  headerShown: true,
+                  StackAnimationTypes: "fullScreenModal",
+                  animation: "fade",
+                }}
               />
             </Stack.Group>
           ) : (
