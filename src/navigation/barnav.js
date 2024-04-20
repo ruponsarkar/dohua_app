@@ -26,11 +26,11 @@ const ProjectListNav=()=>{
         component={ProjectDetailsScreen}
         options={{ headerShown: true, gestureStart: true, title : 'Project Details' }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Gallery"
         component={Gallery}
         options={{ headerShown: true, gestureStart: true, title : 'Gallery' }}
-      />
+      /> */}
       <Stack.Screen
         name="AddProject"
         component={AddProject}
@@ -50,11 +50,11 @@ const HomeNav=()=>{
         component={HomeScreen}
         options={{ headerShown: true, gestureStart: true, title: "Home" }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Gallery"
         component={Gallery}
         options={{ headerShown: true, gestureStart: true, title : 'Gallery' }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 

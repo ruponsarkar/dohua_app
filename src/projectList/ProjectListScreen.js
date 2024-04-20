@@ -41,7 +41,7 @@ const ProjectListScreen = ({ navigation }) => {
         });
       })
       .catch((err) => {
-        console.log("error on getProjects", err);
+        console.log("error on getProjects", err.response);
       });
   };
 

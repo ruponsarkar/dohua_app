@@ -13,7 +13,6 @@ import axios from "axios";
 import FastImage from 'react-native-fast-image'
 
 const ProjectDetailsScreen = () => {
-  // Sample project details
   const route = useRoute();
 
   const { project } = route.params;

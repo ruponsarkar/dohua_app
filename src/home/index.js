@@ -74,8 +74,8 @@ const Home = ({ navigation }) => {
 
     const resizedImage = await ImageResizer.createResizedImage(
       img.uri,
-      800, // maxWidth
-      600, // maxHeight
+      360, // maxWidth
+      500, // maxHeight
       'JPEG', // compressFormat
       80, // quality
   );
