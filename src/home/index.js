@@ -106,7 +106,8 @@ const Home = ({ navigation }) => {
     //   var api = "https://pageuptechnologies.com/api/uploadImg";
     // } else {
 
-    var api = "https://pageuptechnologies.com/api/testApi";
+    // var api = "https://pageuptechnologies.com/api/testApi";
+    var api = "http://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
     // }
 
     axios
@@ -129,7 +130,7 @@ const Home = ({ navigation }) => {
         return "Success";
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log("erro==>>", err);
         setLoader({
           open: false,
         });
