@@ -10,7 +10,8 @@ import {
 } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import axios from "axios";
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
+import moment from 'moment';
 
 const ProjectDetailsScreen = () => {
   const route = useRoute();
@@ -19,6 +20,9 @@ const ProjectDetailsScreen = () => {
 
   console.log("project", project);
   const projectDetails = project;
+
+  const wo_date = moment(projectDetails.wo_date).format('DD/MM/YYYY');
+  const actual_end = moment(projectDetails.actual_end).format('DD/MM/YYYY');
 
   const [img, setImg] = useState([]);
   const [loader, setLoader] = useState({
@@ -88,16 +92,48 @@ const ProjectDetailsScreen = () => {
         </Text>
       </View>
       <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Project type:</Text>
+        <Text style={styles.detailsText}>{projectDetails.type}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>District:</Text>
+        <Text style={styles.detailsText}>{projectDetails.district}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Source of Fund:</Text>
+        <Text style={styles.detailsText}>{projectDetails.scheme}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Contractor Name:</Text>
+        <Text style={styles.detailsText}>{projectDetails.contractor_name}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Contractor's Phone:</Text>
+        <Text style={styles.detailsText}>{projectDetails.contractor_phone}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Percentage Progress:</Text>
+        <Text style={styles.detailsText}>{projectDetails.percentageProgress}%</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Financial Progress:</Text>
+        <Text style={styles.detailsText}>{projectDetails.financialProgress}%</Text>
+      </View>
+      <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Start Date:</Text>
-        <Text style={styles.detailsText}>{projectDetails.wo_date}</Text>
+        <Text style={styles.detailsText}>{wo_date}</Text>
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>End Date:</Text>
-        <Text style={styles.detailsText}>{projectDetails.endDate}</Text>
+        <Text style={styles.detailsText}>{actual_end}</Text>
       </View>
       <View style={styles.detailsContainer}>
-        <Text style={styles.detailsLabel}>Client:</Text>
-        <Text style={styles.detailsText}>{projectDetails.client}</Text>
+        <Text style={styles.detailsLabel}>File No.:</Text>
+        <Text style={styles.detailsText}>{projectDetails.fileNo}</Text>
+      </View>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsLabel}>Remarks :</Text>
+        <Text style={styles.detailsText}>{projectDetails.remarks}</Text>
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Status:</Text>

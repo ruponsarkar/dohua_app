@@ -21,11 +21,20 @@ const Login = ({ navigation }) => {
   const { dispatch } = useContext(AuthContext);
 
   const handleLogin = () => {
-    // Implement authentication logic here
+
+    if (!email || !password) {
+      // Alert the user if any required fields are empty
+      Alert.alert('Error', 'Please fill in all required fields');
+      return;
+    } else{
+      // Implement authentication logic here
     console.log("Email:", email);
     console.log("Password:", password);
 
     authlogin();
+    }
+
+    
   };
 
   const authlogin = async () => {
