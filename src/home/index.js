@@ -21,7 +21,7 @@ import { actionCreators } from "../redux/index";
 import axios from "axios";
 import OverlayLoading from "../component/loader";
 import ImageResizer from 'react-native-image-resizer';
-
+import fetch from 'cross-fetch';
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -66,10 +66,10 @@ const Home = ({ navigation }) => {
   };
 
   const uploadToServer = async(img) => {
-    setLoader({
-      open: true,
-      text: "Saving...",
-    });
+    // setLoader({
+    //   open: true,
+    //   text: "Saving...",
+    // });
 
 
     const resizedImage = await ImageResizer.createResizedImage(
@@ -110,37 +110,54 @@ const Home = ({ navigation }) => {
     var api = "http://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
     // }
 
-    axios
-      .post(api, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        console.log("Image uploaded successfully:", res.data);
-        Alert.alert("Success", "Photo Saved Successfully", [
-          {
-            text: "Cancel",
-            style: "cancel",
-          },
-        ]);
-        setLoader({
-          open: false,
-        });
-        return "Success";
-      })
-      .catch((err) => {
-        console.log("erro==>>", err);
-        setLoader({
-          open: false,
-        });
-        Alert.alert("Error", "Something went wrongb", [
-          {
-            text: "Cancel",
-            style: "cancel",
-          },
-        ]);
-      });
+    const options = {
+      method: 'post',
+      body: formData,
+    };
+
+    fetch(api, options)
+    .then(response => console.log(response.json()))
+    .then((data) => {console.log(data)})
+    .catch((error) => {
+        console.log("error", error);
+    });
+
+    // axios
+    //   .post(api, formData, {
+    //     body : {user_id : user?.id},
+    //     headers: {
+    //       "Content-Type": "multipart/form-data",
+    //     },
+    //   })
+    //   .then((res) => {
+    //     console.log("Image uploaded successfully:", res.data);
+    //     Alert.alert("Success", "Photo Saved Successfully", [
+    //       {
+    //         text: "Cancel",
+    //         style: "cancel",
+    //       },
+    //     ]);
+    //     setLoader({
+    //       open: false,
+    //     });
+    //     return "Success";
+    //   })
+    //   .catch((err) => {
+    //     console.log("erro==>>", err);
+    //     setLoader({
+    //       open: false,
+    //     });
+    //     Alert.alert("Error", "Something went wrongb", [
+    //       {
+    //         text: "Cancel",
+    //         style: "cancel",
+    //       },
+    //     ]);
+    //   });
+
+
+
+
   };
 
   return (

@@ -6,6 +6,9 @@ import {
   FlatList,
   TouchableOpacity,
   Alert,
+  RefreshControl,
+  ScrollView,
+  SafeAreaView
 } from "react-native";
 import { Card, Divider, Badge, Button } from "@rneui/themed";
 import Icon from "react-native-vector-icons/Feather";
@@ -19,12 +22,22 @@ import OverlayLoading from "../component/loader";
 const ProjectListScreen = ({ navigation }) => {
   const coords = useSelector((state) => state.location);
 
+  const [refreshing, setRefreshing] = React.useState(false);
   const [projects, setProjects] = useState([]);
   const [user, setUser] = useState();
   const [loader, setLoader] = useState({
     open: false,
     text: "",
   });
+
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
+
 
   const getProjects = () => {
     setLoader({
@@ -34,14 +47,14 @@ const ProjectListScreen = ({ navigation }) => {
     axios
       .post("http://statedatacenterdispuraiidc.com:9000/api/getAllProjects")
       .then((res) => {
-        // console.log("res", res.data);
+        console.log("res", res.data);
         setProjects(res.data);
         setLoader({
           open: false,
         });
       })
       .catch((err) => {
-        console.log("error on getProjects", err.response);
+        console.log("error on getProjects", err);
       });
   };
 
@@ -216,7 +229,8 @@ const ProjectListScreen = ({ navigation }) => {
   };
 
   return (
-    <>
+    <SafeAreaView>
+
       <View>
         <Button
           size="sm"
@@ -247,7 +261,8 @@ const ProjectListScreen = ({ navigation }) => {
           contentContainerStyle={{ flexGrow: 1 }}
         />
       </View>
-    </>
+
+    </SafeAreaView>
   );
 };
 
