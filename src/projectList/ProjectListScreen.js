@@ -229,7 +229,7 @@ const ProjectListScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView>
+    <>
 
       <View>
         <Button
@@ -262,7 +262,7 @@ const ProjectListScreen = ({ navigation }) => {
         />
       </View>
 
-    </SafeAreaView>
+    </>
   );
 };
 
