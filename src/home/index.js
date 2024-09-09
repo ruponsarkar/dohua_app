@@ -20,8 +20,8 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../redux/index";
 import axios from "axios";
 import OverlayLoading from "../component/loader";
-import ImageResizer from 'react-native-image-resizer';
-import fetch from 'cross-fetch';
+import ImageResizer from "react-native-image-resizer";
+import fetch from "cross-fetch";
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -65,24 +65,23 @@ const Home = ({ navigation }) => {
     }
   };
 
-  const uploadToServer = async(img) => {
+  const uploadToServer = async (img) => {
     // setLoader({
     //   open: true,
     //   text: "Saving...",
     // });
 
-
     const resizedImage = await ImageResizer.createResizedImage(
       img.uri,
       360, // maxWidth
       500, // maxHeight
-      'JPEG', // compressFormat
-      80, // quality
-  );
-  // resizedImage.uri contains the URI of the compressed image
-  console.log('Compressed image URI:', resizedImage.uri);
-  console.log('Compressed image:', resizedImage);
-  console.log("==>>", img.type);
+      "JPEG", // compressFormat
+      80 // quality
+    );
+    // resizedImage.uri contains the URI of the compressed image
+    console.log("Compressed image URI:", resizedImage.uri);
+    console.log("Compressed image:", resizedImage);
+    console.log("==>>", img.type);
 
     const formData = new FormData();
     formData.append("image", {
@@ -107,20 +106,23 @@ const Home = ({ navigation }) => {
     // } else {
 
     // var api = "https://pageuptechnologies.com/api/testApi";
-    var api = "http://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
+    var api =
+      "http://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
     // }
 
     const options = {
-      method: 'post',
+      method: "post",
       body: formData,
     };
 
     fetch(api, options)
-    .then(response => console.log(response.json()))
-    .then((data) => {console.log(data)})
-    .catch((error) => {
+      .then((response) => console.log(response.json()))
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
         console.log("error", error);
-    });
+      });
 
     // axios
     //   .post(api, formData, {
@@ -154,15 +156,11 @@ const Home = ({ navigation }) => {
     //       },
     //     ]);
     //   });
-
-
-
-
   };
 
   return (
     <ScrollView>
-      <Card containerStyle={{ margin: 0}}>
+      <Card containerStyle={{ margin: 0 }}>
         <View style={styles.container}>
           <View style={styles.imageContainer}>
             <Image
@@ -180,10 +178,13 @@ const Home = ({ navigation }) => {
         </View>
 
         <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
-          State Data Center Dispur
+          State Data Center
+        </Text>
+        <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
+          Barpeta, Sonitpur, Silchar, Tinsukia, Jorhat
         </Text>
       </Card>
-      
+
       <OverlayLoading visible={loader.open} text={loader.text} />
       <View style={{ backgroundColor: "wheat", padding: 12 }}>
         <Text>Latitude: {coords.latitude}</Text>
@@ -199,53 +200,56 @@ const Home = ({ navigation }) => {
         </Pressable>
       </View>
 
-      
+      <Card containerStyle={{ margin: 0 }}>
+        <View style={styles.boxContainer}>
+          <View style={styles.box}>
+            <Pressable onPress={() => openCamera()}>
+              <Icon
+                name="camera"
+                size={60}
+                color={"white"}
+                style={{ textAlign: "center" }}
+              />
+              <Text style={{ textAlign: "center", color: "white" }}>
+                Open Camera
+              </Text>
+            </Pressable>
+          </View>
+          <View style={styles.box}>
+            <Pressable onPress={() => navigation.navigate("Gallery")}>
+              <MaterialCommunityIcons
+                name="image-multiple-outline"
+                size={60}
+                color={"white"}
+                style={{ textAlign: "center" }}
+              />
+              <Text style={{ textAlign: "center", color: "white" }}>
+                Open Gallery
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+      </Card>
 
-
-      <Card containerStyle={{ margin: 0}}>
-      <View style={styles.boxContainer}>
-      <View style={styles.box}>
-      <Pressable
-          onPress={() => openCamera()}>
-      <Icon
-            name="camera"
-            size={60}
-            color={"white"}
-            style={{ textAlign: "center" }}
-          />
-          <Text style={{ textAlign: "center", color: "white" }}>
-            Open Camera
-          </Text>
-          </Pressable>
-      </View>
-      <View style={styles.box}>
-      <Pressable onPress={() => navigation.navigate("Gallery")}>
-      <MaterialCommunityIcons
-            name="image-multiple-outline"
-            size={60}
-            color={"white"}
-            style={{ textAlign: "center" }}
-          />
-          <Text style={{ textAlign: "center", color: "white" }}>
-            Open Gallery
-          </Text>
-          </Pressable>
-      </View>
-    </View>
-    </Card>
-
-
-<View>
-<Card containerStyle={{ margin: 0}}>
-          <Text style={{fontSize: 20, textAlign: 'center', fontWeight: 'bold'}}>
+      <View>
+        <Card containerStyle={{ margin: 0 }}>
+          <Text
+            style={{ fontSize: 20, textAlign: "center", fontWeight: "bold" }}
+          >
             Projects Details
           </Text>
-          <Card containerStyle={{ borderRadius: 10, backgroundColor: '#B0E0E6' }}>
+          <Card
+            containerStyle={{ borderRadius: 10, backgroundColor: "#B0E0E6" }}
+          >
             <View style={styles.projectContainer}>
               <View style={styles.leftTextContainer}>
-                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
-                  <MaterialCommunityIcons name="circle-multiple" size={25} color={'black'}/> Total
-                  Projects:
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                  <MaterialCommunityIcons
+                    name="circle-multiple"
+                    size={25}
+                    color={"black"}
+                  />{" "}
+                  Total Projects:
                 </Text>
               </View>
               <View style={styles.rightTextContainer}>
@@ -253,12 +257,18 @@ const Home = ({ navigation }) => {
               </View>
             </View>
           </Card>
-          <Card containerStyle={{ borderRadius: 10, backgroundColor: '#FFFACD' }}>
-          <View style={styles.projectContainer}>
+          <Card
+            containerStyle={{ borderRadius: 10, backgroundColor: "#FFFACD" }}
+          >
+            <View style={styles.projectContainer}>
               <View style={styles.leftTextContainer}>
-                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
-                  <MaterialCommunityIcons name="timer-sand-complete" size={25} color={'black'}/> Ongoing
-                  Projects:
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                  <MaterialCommunityIcons
+                    name="timer-sand-complete"
+                    size={25}
+                    color={"black"}
+                  />{" "}
+                  Ongoing Projects:
                 </Text>
               </View>
               <View style={styles.rightTextContainer}>
@@ -266,12 +276,18 @@ const Home = ({ navigation }) => {
               </View>
             </View>
           </Card>
-          <Card containerStyle={{ borderRadius: 10, backgroundColor: '#90EE90' }}>
-          <View style={styles.projectContainer}>
+          <Card
+            containerStyle={{ borderRadius: 10, backgroundColor: "#90EE90" }}
+          >
+            <View style={styles.projectContainer}>
               <View style={styles.leftTextContainer}>
-                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
-                  <MaterialCommunityIcons name="check-circle-outline" size={25} color={'black'}/> Completed
-                  Projects:
+                <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+                  <MaterialCommunityIcons
+                    name="check-circle-outline"
+                    size={25}
+                    color={"black"}
+                  />{" "}
+                  Completed Projects:
                 </Text>
               </View>
               <View style={styles.rightTextContainer}>
@@ -279,9 +295,8 @@ const Home = ({ navigation }) => {
               </View>
             </View>
           </Card>
-          </Card>
-        </View>
-      
+        </Card>
+      </View>
     </ScrollView>
   );
 };
@@ -302,37 +317,37 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   boxContainer: {
-    flexDirection: 'row', // Arrange children horizontally
-    justifyContent: 'space-between', // Distribute children evenly along the main axis
+    flexDirection: "row", // Arrange children horizontally
+    justifyContent: "space-between", // Distribute children evenly along the main axis
     // paddingHorizontal: 20, // Add some horizontal padding
   },
   box: {
-    width: '48%', // Take up 48% of the container's width
+    width: "48%", // Take up 48% of the container's width
     height: 160,
-    backgroundColor: '#ccc',
+    backgroundColor: "#ccc",
     borderRadius: 10,
     // marginBottom: 20, // Add some vertical margin
-    padding: 40 
+    padding: 40,
   },
   projectContainer: {
-    flexDirection: 'row', // Arrange children horizontally
-    justifyContent: 'space-between', // Distribute children evenly along the main axis
+    flexDirection: "row", // Arrange children horizontally
+    justifyContent: "space-between", // Distribute children evenly along the main axis
     // paddingHorizontal: 20, // Add some horizontal padding
-    alignItems: 'center', // Center children vertically
+    alignItems: "center", // Center children vertically
     height: 50, // Set a fixed height for the container
   },
   leftTextContainer: {
     // flex: 1, // Take up all available space
-    alignItems: 'flex-start', // Align text to the left
+    alignItems: "flex-start", // Align text to the left
   },
   rightTextContainer: {
     flex: 1, // Take up all available space
-    alignItems: 'flex-end', // Align text to the right
+    alignItems: "flex-end", // Align text to the right
     paddingEnd: 15,
   },
   text: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 

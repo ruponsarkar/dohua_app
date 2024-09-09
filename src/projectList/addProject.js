@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import DateTimePicker from '@react-native-community/datetimepicker';
 import { Picker } from "@react-native-picker/picker";
 // import DateTimePicker from 'react-native-ui-datepicker';
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 import DatePicker from "../component/datpicker";
 import {
   View,
@@ -70,6 +70,12 @@ export default function AddProject() {
       .post("http://statedatacenterdispuraiidc.com:9000/api/createProject", abc)
       .then((res) => {
         console.log("add project", res);
+        Alert.alert("Success", "Projected Added Successfully", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
       })
       .catch((err) => {
         console.log("error==>", err);
@@ -118,7 +124,10 @@ export default function AddProject() {
 
         <View>
           <Text style={styles.label}>Work order Date</Text>
-          <DatePicker handleOnChange={(e)=> setData({...data, wo_date: e})} value={data.wo_date}/>
+          <DatePicker
+            handleOnChange={(e) => setData({ ...data, wo_date: e })}
+            value={data.wo_date}
+          />
         </View>
 
         {/* <DateTimePicker

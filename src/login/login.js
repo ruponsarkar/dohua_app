@@ -9,7 +9,7 @@ import {
   Alert,
 } from "react-native";
 import axios from "axios";
-
+import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { AuthContext } from "../navigation/index";
@@ -20,21 +20,22 @@ const Login = ({ navigation }) => {
 
   const { dispatch } = useContext(AuthContext);
 
-  const handleLogin = () => {
+  const districts = ["Barpeta", " Jorhat", "Sonitpur", "Silchar", "Tinsukia"];
 
+  const [selected, setSelected] = useState("Barpeta");
+
+  const handleLogin = () => {
     if (!email || !password) {
       // Alert the user if any required fields are empty
-      Alert.alert('Error', 'Please fill in all required fields');
+      Alert.alert("Error", "Please fill in all required fields");
       return;
-    } else{
+    } else {
       // Implement authentication logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+      console.log("Email:", email);
+      console.log("Password:", password);
 
-    authlogin();
+      authlogin();
     }
-
-    
   };
 
   const authlogin = async () => {
@@ -53,26 +54,27 @@ const Login = ({ navigation }) => {
         password: password,
         // email: "cpphookan.acs@assam.gov.in",
         // password: "Chinmoy#123",
+        // email: "jorhatgisspecialist@gmail.com",
+        // password: "password123@",
       },
     };
 
+    // let api = "http://statedatacenterdispuraiidc.com:9000/api/authenticate"
+    let api = "http://statedatacentreaiidc.com:8500/api/authenticate";
+
     try {
-      const response = await axios.post(
-        "http://statedatacenterdispuraiidc.com:9000/api/authenticate",
-        requestData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "*/*",
-          },
-        }
-      );
+      const response = await axios.post(api, requestData, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*",
+        },
+      });
 
       var user = response.data.message.usr;
       // console.log("response==>>", response);
       console.log("res==>>", JSON.stringify(user));
 
-      if(!JSON.stringify(user)){
+      if (!JSON.stringify(user)) {
         console.log("login error");
         Alert.alert("Login failed !", "Wrong Email or Password ", [
           {
@@ -83,13 +85,11 @@ const Login = ({ navigation }) => {
         return;
       }
 
-
       var data = [
         ["user", JSON.stringify(user)],
         ["userToken", user?.email],
       ];
-      AsyncStorage.multiSet(data, (res) => {
-      });
+      AsyncStorage.multiSet(data, (res) => {});
       dispatch({
         type: "SIGN_IN",
         user: user,
@@ -107,8 +107,6 @@ const Login = ({ navigation }) => {
     }
   };
 
-
-
   return (
     <View style={styles.container}>
       <Image
@@ -116,8 +114,26 @@ const Login = ({ navigation }) => {
         style={styles.logo}
       />
       <Text style={{ color: "black", fontSize: 25, paddingBottom: 10 }}>
-        AIIDC GIS DISPUR
+        State Data Center
       </Text>
+
+      {/* <View style={styles.selectBox}>
+        <Picker
+          selectedValue={selected}
+          onValueChange={(text, itemIndex) => setSelected(text)}
+        >
+          {districts && districts.map((d)=>(
+            <Picker.Item label={d} value={d} />
+          ))}
+        </Picker>
+      </View> */}
+
+      <View>
+        <Text style={{ paddingBottom: 15, fontWeight: "bold" }}>
+          Barpeta/ Jorhat/ Sonitpur/ Silchar/ Tinsukia
+        </Text>
+      </View>
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.inputText}
@@ -179,6 +195,16 @@ const styles = StyleSheet.create({
   },
   loginText: {
     color: "white",
+  },
+
+  selectBox: {
+    width: "100%",
+    borderColor: "gray",
+    borderWidth: 1,
+    padding: 0,
+    marginBottom: 5,
+    marginTop: 5,
+    backgroundColor: "white",
   },
 });
 export default Login;
