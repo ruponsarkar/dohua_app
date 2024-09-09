@@ -13,6 +13,7 @@ import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { AuthContext } from "../navigation/index";
+import Credits from "../component/credits";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -154,6 +155,11 @@ const Login = ({ navigation }) => {
       <TouchableOpacity style={styles.loginBtn} onPress={handleLogin}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
+
+     
+      <Credits />
+
+
     </View>
   );
 };

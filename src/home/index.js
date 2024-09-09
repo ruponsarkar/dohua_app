@@ -23,6 +23,7 @@ import OverlayLoading from "../component/loader";
 import ImageResizer from "react-native-image-resizer";
 import fetch from "cross-fetch";
 
+
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const coords = useSelector((state) => state.location);

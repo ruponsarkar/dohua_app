@@ -1,66 +1,53 @@
-import React, {useEffect, useContext, useState} from 'react'
-import {
-  
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    Button
-} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useContext, useState } from "react";
+import { StyleSheet, Text, View, Image, Button } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 // import { AuthContext } from "../navigation/index";
-import { AuthContext } from '../navigation';
+import { AuthContext } from "../navigation";
+import Credits from "../component/credits";
 
-
-
-const Profile = ({navigation}) => {
-
+const Profile = ({ navigation }) => {
   const { dispatch } = useContext(AuthContext);
-const [user, setUser] = useState();
+  const [user, setUser] = useState();
 
-  const logout=()=>{
+  const logout = () => {
     dispatch({
       type: "SIGN_OUT",
     });
     AsyncStorage.clear();
     return;
-  }
-
+  };
 
   const retrieveData = async () => {
     try {
-      const value = await AsyncStorage.getItem('user');
+      const value = await AsyncStorage.getItem("user");
       if (value !== null) {
         console.log("value", value);
-        setUser(JSON.parse(value))
+        setUser(JSON.parse(value));
       }
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    retrieveData();
+  }, []);
+
+  const imageExists = () => {
+    try {
+      return profileImage && profileImage.uri;
     } catch (error) {
+      return false;
     }
   };
 
-  useEffect(()=>{
-    retrieveData();
-  },[]);
-
-
-
-    const imageExists = () => {
-        try {
-          return profileImage && profileImage.uri;
-        } catch (error) {
-          return false;
-        }
-      };
-
-
-
-      
-    return (
-        <View style={styles.container}>
+  return (
+    <View style={styles.container}>
       {imageExists() ? (
         <Image source={profileImage} style={styles.profileImage} />
       ) : (
-        <Image source={require('../assets/image/aiidc-logo.png')} style={styles.profileImage} />
+        <Image
+          source={require("../assets/image/aiidc-logo.png")}
+          style={styles.profileImage}
+        />
       )}
       <Text style={styles.username}>{user?.name}</Text>
       <Text style={styles.bio}>Designation</Text>
@@ -74,10 +61,12 @@ const [user, setUser] = useState();
       </View>
 
       <View>
-        <Button title='Logout' onPress={logout} />
-
+        <Button title="Logout" onPress={logout} />
       </View>
       {/* Add more information as needed */}
+
+
+      <Credits />
     </View>
   );
 };
@@ -85,9 +74,9 @@ const [user, setUser] = useState();
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ffffff',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#ffffff",
   },
   profileImage: {
     width: 150,
@@ -97,7 +86,7 @@ const styles = StyleSheet.create({
   },
   username: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   bio: {
@@ -105,13 +94,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   infoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 10,
   },
   infoLabel: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginRight: 10,
   },
   infoText: {
