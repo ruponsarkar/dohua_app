@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.sth.app-mergeReleaseResources-36:/values-gu/values-gu.xml",
+            "outputFile": "com.aiidc.app-mergeReleaseResources-36:/values-gu/values-gu.xml",
             "map": [
                 {
                     "source": "/Users/ruponsarkar/.gradle/caches/transforms-3/c732fe37eca554a43ae7c5a99ee41f37/transformed/jetified-react-android-0.73.1-release/res/values-gu/values-gu.xml",

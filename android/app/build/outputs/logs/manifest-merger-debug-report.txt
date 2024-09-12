@@ -248,7 +248,7 @@ MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/ruponsark
 	android:name
 		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:18:7-38
 		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:18:7-38
-activity#com.sth.MainActivity
+activity#com.aiidc.MainActivity
 ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:24:7-35:18
 	android:label
 		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:26:9-41
@@ -612,7 +612,7 @@ ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transfor
 		ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-permission#com.sth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.aiidc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
@@ -622,7 +622,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-uses-permission#com.sth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.aiidc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:22-94

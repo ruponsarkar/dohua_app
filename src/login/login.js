@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { AuthContext } from "../navigation/index";
 import Credits from "../component/credits";
+import { API } from "@env";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -61,8 +62,9 @@ const Login = ({ navigation }) => {
     };
 
     // let api = "http://statedatacenterdispuraiidc.com:9000/api/authenticate"
-    let api = "http://statedatacentreaiidc.com:8500/api/authenticate";
-
+    // let api = "https://statedatacentreaiidc.com:8500/api/authenticate";
+    let api = API + "/api/authenticate";
+    console.log("api==>>>", api);
     try {
       const response = await axios.post(api, requestData, {
         headers: {
@@ -156,10 +158,7 @@ const Login = ({ navigation }) => {
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
 
-     
       <Credits />
-
-
     </View>
   );
 };

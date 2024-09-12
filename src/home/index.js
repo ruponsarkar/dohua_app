@@ -22,7 +22,7 @@ import axios from "axios";
 import OverlayLoading from "../component/loader";
 import ImageResizer from "react-native-image-resizer";
 import fetch from "cross-fetch";
-
+import { API } from "@env";
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -107,9 +107,9 @@ const Home = ({ navigation }) => {
     // } else {
 
     // var api = "https://pageuptechnologies.com/api/testApi";
-    var api =
-      "http://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
-    // }
+    // var api = "https://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
+
+    var api = API + "/api/uploadIntoGallery";
 
     const options = {
       method: "post",
@@ -179,7 +179,7 @@ const Home = ({ navigation }) => {
         </View>
 
         <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
-          State Data Center
+          State Data Center 
         </Text>
         <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
           Barpeta, Sonitpur, Silchar, Tinsukia, Jorhat

@@ -4,7 +4,7 @@
     "type": "BUNDLE",
     "kind": "RegularFile"
   },
-  "applicationId": "com.sth",
+  "applicationId": "com.aiidc",
   "variantName": "release",
   "elements": [
     {

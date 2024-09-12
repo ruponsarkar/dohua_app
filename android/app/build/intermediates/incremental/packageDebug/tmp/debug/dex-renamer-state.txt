@@ -1,15 +1,15 @@
-#Wed Sep 11 11:54:52 IST 2024
+#Thu Sep 12 00:54:17 IST 2024
 base.0=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.4=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+base.3=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
+base.4=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
 base.5=/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex
-path.3=14/classes.dex
-path.4=6/classes.dex
+path.3=10/classes.dex
+path.4=14/classes.dex
 path.5=classes2.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex

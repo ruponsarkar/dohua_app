@@ -17,6 +17,7 @@ import {
   ScrollView,
 } from "react-native";
 import axios from "axios";
+import { API } from "@env";
 
 export default function AddProject() {
   // const [data, setData] = useState({
@@ -65,9 +66,9 @@ export default function AddProject() {
     const abc = { requestObject: data };
     const requestObject = data;
     console.log(abc);
-
+    let api = API+"/api/createProject"
     axios
-      .post("http://statedatacenterdispuraiidc.com:9000/api/createProject", abc)
+      .post(api, abc)
       .then((res) => {
         console.log("add project", res);
         Alert.alert("Success", "Projected Added Successfully", [

@@ -18,6 +18,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import OverlayLoading from "../component/loader";
 // import AddProject from "./addProject";
+import { API } from "@env";
 
 const ProjectListScreen = ({ navigation }) => {
   const coords = useSelector((state) => state.location);
@@ -44,8 +45,9 @@ const ProjectListScreen = ({ navigation }) => {
       open: true,
       text: "Loading Projects..",
     });
+    let api = API+"/api/getAllProjects"
     axios
-      .post("http://statedatacenterdispuraiidc.com:9000/api/getAllProjects")
+      .post(api)
       .then((res) => {
         console.log("res", res.data);
         setProjects(res.data);

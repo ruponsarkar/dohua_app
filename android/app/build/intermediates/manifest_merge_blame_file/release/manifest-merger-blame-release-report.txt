@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.sth"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
+3    package="com.aiidc"
+4    android:versionCode="4"
+5    android:versionName="1.4" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
@@ -71,12 +71,12 @@
 39
 40    <permission
 40-->[androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
-41        android:name="com.sth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+41        android:name="com.aiidc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 41-->[androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
 42        android:protectionLevel="signature" />
 42-->[androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 43
-44    <uses-permission android:name="com.sth.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+44    <uses-permission android:name="com.aiidc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 44-->[androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
 44-->[androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 45    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
@@ -85,7 +85,7 @@
 46
 47    <application
 47-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:16:5-36:19
-48        android:name="com.sth.MainApplication"
+48        android:name="com.aiidc.MainApplication"
 48-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:18:7-38
 49        android:allowBackup="false"
 49-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:22:7-34
@@ -104,7 +104,7 @@
 56-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:23:7-38
 57        <activity
 57-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:24:7-35:18
-58            android:name="com.sth.MainActivity"
+58            android:name="com.aiidc.MainActivity"
 58-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:25:9-37
 59            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
 59-->/Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:27:9-118
@@ -132,7 +132,7 @@
 71-->[:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-24:20
 72            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
 72-->[:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-94
-73            android:authorities="com.sth.provider"
+73            android:authorities="com.aiidc.provider"
 73-->[:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-60
 74            android:exported="false"
 74-->[:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-37
@@ -157,7 +157,7 @@
 85-->[:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-16:20
 86            android:name="com.imagepicker.ImagePickerProvider"
 86-->[:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-63
-87            android:authorities="com.sth.imagepickerprovider"
+87            android:authorities="com.aiidc.imagepickerprovider"
 87-->[:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-71
 88            android:exported="false"
 88-->[:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-37
@@ -174,7 +174,7 @@
 94-->[:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:32:9-40:20
 95            android:name="com.RNFetchBlob.Utils.FileProvider"
 95-->[:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:33:13-62
-96            android:authorities="com.sth.provider"
+96            android:authorities="com.aiidc.provider"
 96-->[:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:34:13-60
 97            android:exported="false"
 97-->[:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:35:13-37
@@ -215,7 +215,7 @@
 117-->[androidx.emoji2:emoji2:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 118            android:name="androidx.startup.InitializationProvider"
 118-->[androidx.emoji2:emoji2:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-119            android:authorities="com.sth.androidx-startup"
+119            android:authorities="com.aiidc.androidx-startup"
 119-->[androidx.emoji2:emoji2:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
 120            android:exported="false" >
 120-->[androidx.emoji2:emoji2:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
