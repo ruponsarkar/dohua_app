@@ -9,7 +9,6 @@ import {
   requestCameraPermission,
   requestLocationPermission,
   requestMediaLocation,
-  requestReadMediaImage,
 } from "../helper/permissions";
 import Icon from "react-native-vector-icons/Feather";
 import ImagePicker from "react-native-image-crop-picker";

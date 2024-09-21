@@ -81,8 +81,8 @@ android {
         applicationId "com.aiidc"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
-        versionName "1.8"
+        versionCode 14
+        versionName "1.1.4"
     }
     signingConfigs {
         release {

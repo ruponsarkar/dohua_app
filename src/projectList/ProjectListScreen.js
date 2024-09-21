@@ -18,9 +18,9 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import OverlayLoading from "../component/loader";
 // import AddProject from "./addProject";
-import { API } from "@env";
+import config from "../../config";
 
-const ProjectListScreen = ({ navigation }) => {
+const ProjectListScreen = ({ navigation, route }) => {
   const coords = useSelector((state) => state.location);
 
   const [refreshing, setRefreshing] = React.useState(false);
@@ -32,9 +32,16 @@ const ProjectListScreen = ({ navigation }) => {
   });
 
 
+  useEffect(() => {
+    if (route.params?.refresh) {
+      getProjects(); // Refresh project list when returning
+    }
+  }, [route.params?.refresh]);
+
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     setTimeout(() => {
+      getProjects();
       setRefreshing(false);
     }, 2000);
   }, []);
@@ -45,9 +52,9 @@ const ProjectListScreen = ({ navigation }) => {
       open: true,
       text: "Loading Projects..",
     });
-    let api = API+"/api/getAllProjects"
+    var api = `${config.API_BASE_URL}/getAllProjects`;
     axios
-      .post(api)
+      .post(api,{})
       .then((res) => {
         console.log("res", res.data);
         setProjects(res.data);
@@ -88,7 +95,6 @@ const ProjectListScreen = ({ navigation }) => {
 
   const openCamera = async (project_id) => {
     var result = await handleOpenCamera();
-    console.log("result here========>>", result);
     if (result.didCancel) {
       console.log("User cancelled image picker");
     } else if (result.error) {
@@ -100,30 +106,26 @@ const ProjectListScreen = ({ navigation }) => {
   };
 
   const uploadToServer = (img, project_id) => {
+    console.log("img, project_id", img, project_id);
     setLoader({
       open: true,
       text: "Uploading...",
     });
 
     const formData = new FormData();
-    formData.append("image", {
-      uri: img.uri,
-      type: img.type,
-      name: img.fileName,
-    });
+    formData.append("docType", 'projectImages');
     formData.append("project_id", project_id);
     formData.append("user_id", user?.id);
     formData.append("GPSLatitude", coords.latitude);
     formData.append("GPSLongitude", coords.longitude);
     formData.append("address", coords.address);
-
-    // if (project_id) {
-    var api = "https://pageuptechnologies.com/api/uploadImg";
-    // } else {
-
-    // var api = "https://pageuptechnologies.com/api/testApi";
-    // }
-
+    formData.append("file", {
+      uri: img.uri,
+      type: img.type,
+      name: img.fileName,
+    });
+    
+    var api = `${config.API_BASE_URL}/uploadFileMob`;
     axios
       .post(api, formData, {
         headers: {
@@ -144,8 +146,11 @@ const ProjectListScreen = ({ navigation }) => {
         return "Success";
       })
       .catch((err) => {
-        console.log(err.response);
-        Alert.alert("Error", "Something went wrongb", [
+        console.log("error here=====>>", err);
+        setLoader({
+          open: false,
+        });
+        Alert.alert("Error", "Something went wrong, please try again", [
           {
             text: "Cancel",
             style: "cancel",
@@ -162,9 +167,12 @@ const ProjectListScreen = ({ navigation }) => {
     >
       <Text style={styles.projectName}>{item.name}</Text>
       <Text style={styles.projectDescription}>{item.description}</Text>
+      {/* <Text style={styles.projectDescription}> accessKeyword {user?.accessKeyword}</Text> */}
+      {/* accessKeyword */}
       <Text style={{ flexDirection: "row", flex: 1, textAlign: "center" }}>
         <Button
           size="sm"
+          disabled={user?.accessKeyword === item.accessKeyword ? false: true}
           buttonStyle={{
             backgroundColor: "rgba(90, 154, 230, 1)",
             borderColor: "transparent",
@@ -194,6 +202,7 @@ const ProjectListScreen = ({ navigation }) => {
         &nbsp;
         <Button
           size="sm"
+          disabled={user?.accessKeyword === item.accessKeyword ? false: true}
           buttonStyle={{
             backgroundColor: "rgba(199, 43, 98, 1)",
             borderColor: "transparent",
@@ -261,6 +270,9 @@ const ProjectListScreen = ({ navigation }) => {
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           contentContainerStyle={{ flexGrow: 1 }}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
         />
       </View>
 

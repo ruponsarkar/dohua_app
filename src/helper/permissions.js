@@ -105,29 +105,5 @@ import {
     };
 
 
-    const requestReadMediaImage = async () => {
-      try {
-        const granted = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.READ_MEDIA_IMAGES,
-          {
-            title: "READ_MEDIA_IMAGES",
-            message: "Can we access your READ_MEDIA_IMAGES?",
-            buttonNeutral: "Ask Me Later",
-            buttonNegative: "Cancel",
-            buttonPositive: "OK",
-          }
-        );
-        console.log("granted", granted);
-        if (granted === "granted") {
-          console.log("You can use READ_MEDIA_IMAGES");
-          return true;
-        } else {
-          console.log("You cannot use READ_MEDIA_IMAGES");
-          return false;
-        }
-      } catch (err) {
-        return false;
-      }
-    };
 
-    export {requestCameraPermission, requestLocationPermission, requestMediaLocation, requestReadStorage, requestReadMediaImage}
+    export {requestCameraPermission, requestLocationPermission, requestMediaLocation, requestReadStorage}

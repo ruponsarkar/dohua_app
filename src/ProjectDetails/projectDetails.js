@@ -12,6 +12,7 @@ import { useRoute } from "@react-navigation/native";
 import axios from "axios";
 import FastImage from 'react-native-fast-image';
 import moment from 'moment';
+import config from "../../config";
 
 const ProjectDetailsScreen = () => {
   const route = useRoute();
@@ -30,25 +31,36 @@ const ProjectDetailsScreen = () => {
     text: "",
   });
   useEffect(() => {
-    getImgByProject();
+    // getImgByProject();
+    getImagesById();
   }, []);
 
-  const getImgByProject = () => {
+  const getImagesById = () => {
+    var api = `${config.API_BASE_URL}/getImagesById`;
     setLoader({
       open: true,
-      text: "Please Wait",
+      text: "Loading Pictures...",
     });
+    let requestObject = {
+      type: 'projectImages',
+      user_id: null,
+      project_id: projectDetails.id
+    }
     axios
-      .get(
-        "https://pageuptechnologies.com/api/getImgByProject/" +
-          projectDetails.id
-      )
+      .post(api, requestObject,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
       .then((res) => {
-        console.log("resposeIg", res.data.data);
-        setImg(res.data.data);
-        setLoader({
-          open: false,
-        });
+        console.log("RES==", res.data.message);
+        if (res.status) {
+          setImg(res.data.message.map((e) => ({ ...e, loading: true })));
+          setLoader({
+            open: false,
+          });
+        }
       })
       .catch((err) => {
         console.log("err get img", err);
@@ -57,13 +69,25 @@ const ProjectDetailsScreen = () => {
 
 
 
+
+
   // Render each image in the gallery
   const renderImageItem = ({ item }) => (
     // <Image source={item.source} style={styles.imageItem} resizeMode="cover" />
     <TouchableOpacity onPress={() => console.log("item.image", item.image)}>
       <Image
-        source={{ uri: `https://pageuptechnologies.com/project/${item.image}` }}
+        source={{
+          uri: `${item.loading
+              ? `https://icons8.com/preloaders/preloaders/759/Camera%20aperture.gif`
+              : `${config.IMAGE_BASE_URL}/docs2/${item.file_path}`
+            } `,
+        }}
         style={styles.imageItem}
+        onLoadEnd={() =>
+          setImg(
+            img.map((e) => (e.id === item.id ? { ...e, loading: false } : e))
+          )
+        }
         resizeMode={FastImage.resizeMode.cover}
       />
     </TouchableOpacity>

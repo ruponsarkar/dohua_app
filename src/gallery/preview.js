@@ -11,20 +11,18 @@ import {
 } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
+import config from "../../config";
 const { width } = Dimensions.get("window");
 
 export default function Preview({ navigation }) {
   const route = useRoute();
   const { image, projectId } = route.params;
-
-  console.log("==>>>", image.thumb);
   return (
     <>
     <View style={styles.container}>
       <ImageBackground
         source={{
-          uri: `https://pageuptechnologies.com/test/thumb/${image?.thumb}`,
+          uri: `${config.IMAGE_BASE_URL}/docs1/${image.file_path}`,
         }}
         style={styles.image}
       >
@@ -43,7 +41,9 @@ export default function Preview({ navigation }) {
           <Button onPress={()=> navigation.goBack()} title="Go back" />
         </View>
         <View>
-          <Button disabled={projectId? false: true} title="Upload " onPress={()=>navigation.navigate('Gallery', {upload: image, projectId: projectId })} />
+          {projectId && 
+            <Button disabled={projectId? false: true} title="Upload " onPress={()=>navigation.navigate('Gallery', {upload: image, projectId: projectId })} />
+          }
         </View>
       </View>
     </>

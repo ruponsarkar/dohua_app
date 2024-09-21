@@ -22,13 +22,14 @@ import axios from "axios";
 import OverlayLoading from "../component/loader";
 import ImageResizer from "react-native-image-resizer";
 import fetch from "cross-fetch";
-import { API } from "@env";
+import config from "../../config";
 
 const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const coords = useSelector((state) => state.location);
   const { fetchLocation } = bindActionCreators(actionCreators, dispatch);
   const [user, setUser] = useState();
+  const [projectCounts, setProjectCounts] = useState({completedCount: 0, cuurentCount: 0, totalCount: 0});
   const [loader, setLoader] = useState({
     open: false,
     text: "",
@@ -53,24 +54,63 @@ const Home = ({ navigation }) => {
     }
   };
 
+  useEffect(()=>{
+    getProjectCounts();
+  },[]);
+
+  const getProjectCounts = async () => {
+    try {
+      setLoader({
+        open: true,
+        text: "Loading Pictures...",
+      });
+      var api = `${config.API_BASE_URL}/projectCount`;
+      let requestObject = {}
+      axios
+        .post(api, requestObject,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+        .then((res) => {
+          if (res.status) {
+            setProjectCounts({
+              completedCount: res.data.completedCount, 
+              cuurentCount: res.data.cuurentCount, 
+              totalCount: res.data.totalCount
+            });
+            setLoader({
+              open: false,
+            });
+          }
+        })
+        .catch((err) => {
+          console.log("err get img", err);
+        });
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   const openCamera = async () => {
     var result = await handleOpenCamera();
-    console.log("result here========>>", result.didCancel);
     if (result.didCancel) {
       console.log("User cancelled image picker");
     } else if (result.error) {
       console.log("ImagePicker Error: ", response.error);
     } else {
       var img = result.assets[0];
+      console.log("IMAGEEEEEE========>>", img);
       uploadToServer(img);
     }
   };
 
   const uploadToServer = async (img) => {
-    // setLoader({
-    //   open: true,
-    //   text: "Saving...",
-    // });
+    setLoader({
+      open: true,
+      text: "Saving...",
+    });
 
     const resizedImage = await ImageResizer.createResizedImage(
       img.uri,
@@ -79,84 +119,57 @@ const Home = ({ navigation }) => {
       "JPEG", // compressFormat
       80 // quality
     );
-    // resizedImage.uri contains the URI of the compressed image
-    console.log("Compressed image URI:", resizedImage.uri);
-    console.log("Compressed image:", resizedImage);
-    console.log("==>>", img.type);
-
     const formData = new FormData();
-    formData.append("image", {
-      uri: img.uri,
-      type: img.type,
-      name: img.fileName,
-    });
-    formData.append("thumb", {
-      uri: resizedImage.uri,
-      type: img.type,
-      name: img.fileName,
-    });
-
+    formData.append("docType", 'imageGallery');
     formData.append("project_id", null);
     formData.append("user_id", user?.id);
     formData.append("GPSLatitude", coords.latitude);
     formData.append("GPSLongitude", coords.longitude);
     formData.append("address", coords.address);
+    formData.append("file", {
+      uri: img.uri,
+      type: img.type,
+      name: img.fileName,
+    });
+    // formData.append("thumb", {
+    //   uri: resizedImage.uri,
+    //   type: img.type,
+    //   name: img.fileName,
+    // });
 
-    // if (project_id) {
-    //   var api = "https://pageuptechnologies.com/api/uploadImg";
-    // } else {
-
-    // var api = "https://pageuptechnologies.com/api/testApi";
-    // var api = "https://statedatacenterdispuraiidc.com:9000/api/uploadIntoGallery";
-
-    var api = API + "/api/uploadIntoGallery";
-
-    const options = {
-      method: "post",
-      body: formData,
-    };
-
-    fetch(api, options)
-      .then((response) => console.log(response.json()))
-      .then((data) => {
-        console.log(data);
+    var api = `${config.API_BASE_URL}/uploadFileMob`;
+    axios
+      .post(api, formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+      .then((res) => {
+        console.log("Image uploaded successfully:", res.data);
+        Alert.alert("Success", "Gallery Image Uploaded Successfully", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
+        setLoader({
+          open: false,
+        });
+        return "Success";
       })
-      .catch((error) => {
-        console.log("error", error);
+      .catch((err) => {
+        console.log("erro==>>", err);
+        setLoader({
+          open: false,
+        });
+        Alert.alert("Error", "Something went wrong", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
       });
-
-    // axios
-    //   .post(api, formData, {
-    //     body : {user_id : user?.id},
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   })
-    //   .then((res) => {
-    //     console.log("Image uploaded successfully:", res.data);
-    //     Alert.alert("Success", "Photo Saved Successfully", [
-    //       {
-    //         text: "Cancel",
-    //         style: "cancel",
-    //       },
-    //     ]);
-    //     setLoader({
-    //       open: false,
-    //     });
-    //     return "Success";
-    //   })
-    //   .catch((err) => {
-    //     console.log("erro==>>", err);
-    //     setLoader({
-    //       open: false,
-    //     });
-    //     Alert.alert("Error", "Something went wrongb", [
-    //       {
-    //         text: "Cancel",
-    //         style: "cancel",
-    //       },
-    //     ]);
-    //   });
   };
 
   return (
@@ -179,7 +192,7 @@ const Home = ({ navigation }) => {
         </View>
 
         <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
-          State Data Center 
+          State Data Center
         </Text>
         <Text style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
           Barpeta, Sonitpur, Silchar, Tinsukia, Jorhat
@@ -254,7 +267,7 @@ const Home = ({ navigation }) => {
                 </Text>
               </View>
               <View style={styles.rightTextContainer}>
-                <Text style={styles.text}>30</Text>
+                <Text style={styles.text}>{projectCounts.totalCount}</Text>
               </View>
             </View>
           </Card>
@@ -273,7 +286,7 @@ const Home = ({ navigation }) => {
                 </Text>
               </View>
               <View style={styles.rightTextContainer}>
-                <Text style={styles.text}>10</Text>
+                <Text style={styles.text}>{projectCounts.cuurentCount}</Text>
               </View>
             </View>
           </Card>
@@ -292,7 +305,7 @@ const Home = ({ navigation }) => {
                 </Text>
               </View>
               <View style={styles.rightTextContainer}>
-                <Text style={styles.text}>10</Text>
+                <Text style={styles.text}>{projectCounts.completedCount}</Text>
               </View>
             </View>
           </Card>

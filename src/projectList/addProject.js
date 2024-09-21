@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import DateTimePicker from '@react-native-community/datetimepicker';
 import { Picker } from "@react-native-picker/picker";
 // import DateTimePicker from 'react-native-ui-datepicker';
 import dayjs from "dayjs";
 import DatePicker from "../component/datpicker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   View,
   Text,
@@ -18,12 +19,25 @@ import {
 } from "react-native";
 import axios from "axios";
 import { API } from "@env";
+import OverlayLoading from "../component/loader";
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function AddProject() {
+  const navigation = useNavigation(); // Access navigation
+
   // const [data, setData] = useState({
   //   title: '',
   // })
   // const [date, setDate] = useState(dayjs());
+
+  const [user, setUser] = useState();
+  const [loader, setLoader] = useState({
+    open: false,
+    text: "",
+  });
+
+
   const [data, setData] = useState({
     code: null,
     type: "",
@@ -61,32 +75,81 @@ export default function AddProject() {
     actual_stars: "",
   });
 
+
+
+  const retrieveData = async () => {
+    setLoader({
+      open: true,
+      text: "Loading User Information..",
+    });
+    try {
+      const value = await AsyncStorage.getItem("user");
+      if (value !== null) {
+        // We have data!!
+        setUser(JSON.parse(value));
+        setData({ ...data, accessKeyword: JSON.parse(value).accessKeyword })
+
+        console.log("==>>", JSON.parse(value).id);
+        setLoader({
+          open: false,
+        });
+      }
+    } catch (error) {
+      console.log("error", error);
+      // Error retrieving data
+    }
+  };
+
+
+  useEffect(()=>{
+    retrieveData()
+  },[])
+
+
   const handleSubmit = () => {
+
+    // navigation.navigate('ProjectListScreen', { refresh: true });
+    // return;
+
+    setLoader({
+      open: true,
+      text: "Saving data...",
+    });
     // Handle form submission logic here
     const abc = { requestObject: data };
     const requestObject = data;
-    console.log(abc);
+    console.log("==>>",abc);
+    // return;
     let api = API+"/api/createProject"
     axios
       .post(api, abc)
       .then((res) => {
         console.log("add project", res);
-        Alert.alert("Success", "Projected Added Successfully", [
+        setLoader({
+          open: false
+        });
+        Alert.alert("Success", "Project Added Successfully", [
           {
-            text: "Cancel",
-            style: "cancel",
+            text: "OK",
+            onPress: () => {
+              navigation.navigate('ProjectListScreen', { refresh: true }); // Navigate back and trigger refresh
+            },
           },
         ]);
       })
       .catch((err) => {
+        setLoader({
+          open: false
+        });
         console.log("error==>", err);
       });
   };
 
   return (
     <ScrollView>
+      <OverlayLoading visible={loader.open} text={loader.text} />
       <View style={styles.container}>
-        <Text style={styles.label}>Project Title</Text>
+        <Text style={styles.label}>Project Title {user?.accessKeyword}</Text>
         <TextInput
           style={styles.input}
           value={data.name}
