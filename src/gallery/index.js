@@ -34,6 +34,7 @@ const GalleryView = ({ navigation }) => {
 
   const getImagesById = (user_id) => {
     var api = `${config.API_BASE_URL}/getImagesById`;
+    console.log("2api==>>>", api);
     setLoader({
       open: true,
       text: "Loading Pictures...",
@@ -61,6 +62,15 @@ const GalleryView = ({ navigation }) => {
       })
       .catch((err) => {
         console.log("err get img", err);
+        setLoader({
+          open: false,
+        });
+        Alert.alert("Error", "Something went wrong, please try again", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
       });
   };
 
@@ -124,6 +134,12 @@ const GalleryView = ({ navigation }) => {
           setLoader({
             open: false,
           });
+          Alert.alert("Error", "Something went wrong, please try again", [
+            {
+              text: "Cancel",
+              style: "cancel",
+            },
+          ]);
         });
       // var source = "https://pageuptechnologies.com/test/" + upload.image;
       // var dest = "https://pageuptechnologies.com/api/uploadImg";

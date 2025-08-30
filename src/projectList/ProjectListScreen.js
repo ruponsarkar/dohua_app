@@ -53,6 +53,7 @@ const ProjectListScreen = ({ navigation, route }) => {
       text: "Loading Projects..",
     });
     var api = `${config.API_BASE_URL}/getAllProjects`;
+    console.log("getAllProjects ==>>>", api);
     axios
       .post(api,{})
       .then((res) => {
@@ -64,6 +65,15 @@ const ProjectListScreen = ({ navigation, route }) => {
       })
       .catch((err) => {
         console.log("error on getProjects", err);
+        setLoader({
+          open: false,
+        });
+        Alert.alert("Error", "Something went wrong, please try again", [
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]);
       });
   };
 
@@ -84,6 +94,9 @@ const ProjectListScreen = ({ navigation, route }) => {
       }
     } catch (error) {
       console.log("error", error);
+      setLoader({
+        open: false,
+      });
       // Error retrieving data
     }
   };

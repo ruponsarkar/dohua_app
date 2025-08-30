@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:1:1-35:12
 MERGED from [com.facebook.react:flipper-integration:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/2a51aa7a2d582b36b3b4e54e3894d6da/transformed/jetified-flipper-integration-0.73.1-release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-picker_picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-31:12
-MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
-MERGED from [:react-native-safe-area-context] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-screens] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-vector-icons] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-43:12
+MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-picker_picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-31:12
+MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
+MERGED from [:react-native-safe-area-context] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-screens] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-vector-icons] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-43:12
 MERGED from [com.facebook.react:react-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/c732fe37eca554a43ae7c5a99ee41f37/transformed/jetified-react-android-0.73.1-release/AndroidManifest.xml:2:1-12:12
 MERGED from [com.facebook.fresco:fresco:3.1.3] /Users/ruponsarkar/.gradle/caches/transforms-3/73ba53becf6a818dacbfe76ccb7dfd5a/transformed/jetified-fresco-3.1.3/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:3.1.3] /Users/ruponsarkar/.gradle/caches/transforms-3/78816c54b596e77b24ddd4d407d9d3f7/transformed/jetified-imagepipeline-okhttp3-3.1.3/AndroidManifest.xml:2:1-7:12
@@ -59,7 +59,7 @@ MERGED from [androidx.loader:loader:1.0.0] /Users/ruponsarkar/.gradle/caches/tra
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/ruponsarkar/.gradle/caches/transforms-3/aa8b400e3fa62f6a4287be6e71a3821f/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/ruponsarkar/.gradle/caches/transforms-3/0c17d1aa2ccc813649d410d5ca1839aa/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.facebook.react:hermes-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5c89a53c6bd748a7606b93b07d6c966b/transformed/jetified-hermes-android-0.73.1-release/AndroidManifest.xml:2:1-7:12
-MERGED from [:react-native-image-resizer] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-resizer/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-image-resizer] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-resizer/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/699d8495cfbcf29796d79737ecf7fe4f/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/ruponsarkar/.gradle/caches/transforms-3/5b356190bdf4bb7065067fc153a69c6d/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/46d614963c22b23ab93f8be235bc125f/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
@@ -96,58 +96,58 @@ MERGED from [com.facebook.fbjni:fbjni:0.5.1] /Users/ruponsarkar/.gradle/caches/t
 MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/ruponsarkar/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/ruponsarkar/.gradle/caches/transforms-3/7347c325151bfcdf75aa8769efa26987/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:2:1-13:12
 	package
-		INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:3:5-67
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-67
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-67
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:3:5-67
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-67
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-iid:17.0.0] /Users/ruponsarkar/.gradle/caches/transforms-3/7d00a3d973e62c64256363b4cb614082/transformed/jetified-play-services-iid-17.0.0/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:3:22-64
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:3:22-64
 uses-permission#android.permission.CAMERA
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:4:5-64
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:4:5-64
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:4:22-62
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:4:22-62
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:5:5-78
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:5:5-78
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:5:22-76
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:5:22-76
 uses-permission#android.permission.ACCESS_MEDIA_LOCATION
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:6:5-80
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:6:5-80
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:6:22-77
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:6:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:8:5-80
-MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-81
-MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-81
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-81
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-81
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:5-81
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:5-81
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:8:5-80
+MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-81
+MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-81
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-81
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-81
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:5-81
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:29:5-81
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:10:22-77
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:10:22-77
 application
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:14:5-34:19
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:14:5-34:19
-MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-20
-MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-20
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-29:19
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-29:19
-MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-17:19
-MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-17:19
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:31:5-41:19
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:31:5-41:19
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:14:5-34:19
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:14:5-34:19
+MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-20
+MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-20
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-29:19
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:15:5-29:19
+MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-17:19
+MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-17:19
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:31:5-41:19
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:31:5-41:19
 MERGED from [com.google.android.material:material:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/d3a8a24834f295d8078f18b8298041f7/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/d3a8a24834f295d8078f18b8298041f7/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/ruponsarkar/.gradle/caches/transforms-3/dd997c22ecb777a9e0898386a3d502a5/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
@@ -187,83 +187,83 @@ MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/ruponsarkar/.gradle/c
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/ruponsarkar/.gradle/caches/transforms-3/7347c325151bfcdf75aa8769efa26987/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/ruponsarkar/.gradle/caches/transforms-3/7347c325151bfcdf75aa8769efa26987/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:11:5-20
 	android:extractNativeLibs
-		INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 	android:requestLegacyExternalStorage
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:15:5-48
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:15:5-48
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/ruponsarkar/.gradle/caches/transforms-3/13659b94c66de92d98d7f8af61234b95/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:17:7-39
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:17:7-39
 	android:roundIcon
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:19:7-52
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:19:7-52
 	android:icon
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:18:7-41
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:18:7-41
 	android:allowBackup
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:20:7-34
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:20:7-34
 	android:theme
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:21:7-38
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:21:7-38
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:16:7-38
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:16:7-38
 activity#com.aiidc.MainActivity
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:22:7-33:18
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:22:7-33:18
 	android:label
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:24:9-41
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:24:9-41
 	android:launchMode
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:26:9-40
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:26:9-40
 	android:windowSoftInputMode
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:27:9-51
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:27:9-51
 	android:exported
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:28:9-32
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:28:9-32
 	android:configChanges
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:25:9-118
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:25:9-118
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:23:9-37
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:23:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:29:9-32:25
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:29:9-32:25
 action#android.intent.action.MAIN
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:30:13-65
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:30:13-65
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:30:21-62
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:30:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:31:13-73
+ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:31:13-73
 	android:name
-		ADDED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml:31:23-70
+		ADDED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml:31:23-70
 uses-sdk
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 MERGED from [com.facebook.react:flipper-integration:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/2a51aa7a2d582b36b3b4e54e3894d6da/transformed/jetified-flipper-integration-0.73.1-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:flipper-integration:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/2a51aa7a2d582b36b3b4e54e3894d6da/transformed/jetified-flipper-integration-0.73.1-release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-picker_picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-picker_picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-safe-area-context] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-safe-area-context] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-screens] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-screens] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-vector-icons] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-vector-icons] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-fs] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fs/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-async-storage_async-storage] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-community_datetimepicker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-community/datetimepicker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-picker_picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-picker_picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-device-info] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-device-info/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-document-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-document-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-exif] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-exif/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-fast-image] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-fast-image/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-geolocation-service] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-geolocation-service/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-safe-area-context] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-screens] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-screens/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-vector-icons] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-vector-icons] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/c732fe37eca554a43ae7c5a99ee41f37/transformed/jetified-react-android-0.73.1-release/AndroidManifest.xml:10:5-44
 MERGED from [com.facebook.react:react-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/c732fe37eca554a43ae7c5a99ee41f37/transformed/jetified-react-android-0.73.1-release/AndroidManifest.xml:10:5-44
 MERGED from [com.facebook.fresco:fresco:3.1.3] /Users/ruponsarkar/.gradle/caches/transforms-3/73ba53becf6a818dacbfe76ccb7dfd5a/transformed/jetified-fresco-3.1.3/AndroidManifest.xml:5:5-44
@@ -342,8 +342,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/rup
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/ruponsarkar/.gradle/caches/transforms-3/0c17d1aa2ccc813649d410d5ca1839aa/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.facebook.react:hermes-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5c89a53c6bd748a7606b93b07d6c966b/transformed/jetified-hermes-android-0.73.1-release/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.73.1] /Users/ruponsarkar/.gradle/caches/transforms-3/5c89a53c6bd748a7606b93b07d6c966b/transformed/jetified-hermes-android-0.73.1-release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-image-resizer] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-resizer/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [:react-native-image-resizer] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-resizer/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-image-resizer] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-resizer/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-image-resizer] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-resizer/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/699d8495cfbcf29796d79737ecf7fe4f/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/ruponsarkar/.gradle/caches/transforms-3/699d8495cfbcf29796d79737ecf7fe4f/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/ruponsarkar/.gradle/caches/transforms-3/5b356190bdf4bb7065067fc153a69c6d/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -415,75 +415,75 @@ MERGED from [com.facebook.soloader:soloader:0.10.5] /Users/ruponsarkar/.gradle/c
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/ruponsarkar/.gradle/caches/transforms-3/7347c325151bfcdf75aa8769efa26987/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.installreferrer:installreferrer:1.1.2] /Users/ruponsarkar/.gradle/caches/transforms-3/7347c325151bfcdf75aa8769efa26987/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:5:5-7:41
 	android:targetSdkVersion
-		INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/android/app/src/main/AndroidManifest.xml
 queries
-ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-11:15
+ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:7:5-11:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
-ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-10:18
+ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-10:18
 action#android.media.action.IMAGE_CAPTURE
-ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-73
+ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-73
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:21-70
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:21-70
 provider#com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider
-ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-24:20
+ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-24:20
 	android:grantUriPermissions
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-47
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-47
 	android:authorities
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-60
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-60
 	android:exported
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-37
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-94
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-94
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-23:78
+ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-23:78
 	android:resource
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:17-75
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:17-75
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:17-67
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:22:17-67
 activity#com.yalantis.ucrop.UCropActivity
-ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:9-28:72
+ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:9-28:72
 	android:theme
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:28:13-69
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:28:13-69
 	android:name
-		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:27:13-60
+		ADDED from [:react-native-image-crop-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:27:13-60
 provider#com.imagepicker.ImagePickerProvider
-ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-16:20
+ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-16:20
 	android:grantUriPermissions
-		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-47
+		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-47
 	android:authorities
-		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-71
+		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-71
 	android:exported
-		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-37
+		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-37
 	android:name
-		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-63
+		ADDED from [:react-native-image-picker] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-63
 uses-permission#com.android.vending.CHECK_LICENSE
-ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:5-73
+ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:5-73
 	android:name
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:22-70
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:8:22-70
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-68
+ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:5-68
 	android:name
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:22-65
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:17:22-65
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:5-79
+ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:22-76
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:23:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:5-76
+ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:5-76
 	android:name
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:22-73
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:26:22-73
 provider#com.RNFetchBlob.Utils.FileProvider
-ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:32:9-40:20
+ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:32:9-40:20
 	android:grantUriPermissions
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:36:13-47
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:36:13-47
 	android:authorities
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:34:13-60
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:34:13-60
 	android:exported
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:35:13-37
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/dohua_app_new/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:33:13-62
+		ADDED from [:rn-fetch-blob] /Users/ruponsarkar/Documents/projects/skaplink/dohua_app/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:33:13-62
 meta-data#com.bumptech.glide.integration.okhttp3.OkHttpGlideModule
 ADDED from [com.github.bumptech.glide:okhttp3-integration:4.12.0] /Users/ruponsarkar/.gradle/caches/transforms-3/35e720805bb760c1d60f4c9e61c13954/transformed/jetified-okhttp3-integration-4.12.0/AndroidManifest.xml:11:9-13:43
 	android:value

@@ -65,6 +65,7 @@ const Home = ({ navigation }) => {
         text: "Loading Pictures...",
       });
       var api = `${config.API_BASE_URL}/projectCount`;
+      console.log("api==>>>", api);
       let requestObject = {}
       axios
         .post(api, requestObject,
@@ -107,6 +108,7 @@ const Home = ({ navigation }) => {
   };
 
   const uploadToServer = async (img) => {
+    console.log("coords ==>>", coords);
     setLoader({
       open: true,
       text: "Saving...",
