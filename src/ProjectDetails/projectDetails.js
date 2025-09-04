@@ -54,7 +54,7 @@ const ProjectDetailsScreen = () => {
           },
         })
       .then((res) => {
-        console.log("RES==", res.data.message);
+        console.log("getImagesById==", res.data.message);
         if (res.status) {
           setImg(res.data.message.map((e) => ({ ...e, loading: true })));
           setLoader({
@@ -98,6 +98,8 @@ const ProjectDetailsScreen = () => {
     switch (status) {
       case "In Progress":
         return { color: "orange" };
+      case "Ongoing":
+        return { color: "orange" };
       case "Completed":
         return { color: "green" };
       case "On Hold":
@@ -123,10 +125,12 @@ const ProjectDetailsScreen = () => {
         <Text style={styles.detailsLabel}>District:</Text>
         <Text style={styles.detailsText}>{projectDetails.district}</Text>
       </View>
+      {projectDetails.scheme &&
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Source of Fund:</Text>
         <Text style={styles.detailsText}>{projectDetails.scheme}</Text>
       </View>
+  }
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>Contractor Name:</Text>
         <Text style={styles.detailsText}>{projectDetails.contractor_name}</Text>
@@ -147,10 +151,12 @@ const ProjectDetailsScreen = () => {
         <Text style={styles.detailsLabel}>Start Date:</Text>
         <Text style={styles.detailsText}>{wo_date}</Text>
       </View>
+      {actual_end && actual_end !== 'Invalid date' &&
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>End Date:</Text>
         <Text style={styles.detailsText}>{actual_end}</Text>
       </View>
+      }
       <View style={styles.detailsContainer}>
         <Text style={styles.detailsLabel}>File No.:</Text>
         <Text style={styles.detailsText}>{projectDetails.fileNo}</Text>

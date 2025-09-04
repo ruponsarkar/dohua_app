@@ -184,12 +184,13 @@ const GalleryView = ({ navigation }) => {
         resizeMode={FastImage.resizeMode.cover}
       /> */}
       <View style={styles.badge}>
-        <Text style={styles.badgeText}>-30 days</Text>
+        {/* <Text style={styles.badgeText}>-30 days</Text> */}
       </View>
     </TouchableOpacity>
   );
 
   const handleImagePress = (image) => {
+    console.log("image====:", image);
     console.log("Selected Project Id====:", projectId);
     navigation.navigate("Preview", { image: image, projectId: projectId });
     return;

@@ -29,7 +29,11 @@ const Home = ({ navigation }) => {
   const coords = useSelector((state) => state.location);
   const { fetchLocation } = bindActionCreators(actionCreators, dispatch);
   const [user, setUser] = useState();
-  const [projectCounts, setProjectCounts] = useState({completedCount: 0, cuurentCount: 0, totalCount: 0});
+  const [projectCounts, setProjectCounts] = useState({
+    completedCount: 0,
+    cuurentCount: 0,
+    totalCount: 0,
+  });
   const [loader, setLoader] = useState({
     open: false,
     text: "",
@@ -54,9 +58,9 @@ const Home = ({ navigation }) => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     getProjectCounts();
-  },[]);
+  }, []);
 
   const getProjectCounts = async () => {
     try {
@@ -66,20 +70,19 @@ const Home = ({ navigation }) => {
       });
       var api = `${config.API_BASE_URL}/projectCount`;
       console.log("api==>>>", api);
-      let requestObject = {}
+      let requestObject = {};
       axios
-        .post(api, requestObject,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
+        .post(api, requestObject, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
         .then((res) => {
           if (res.status) {
             setProjectCounts({
-              completedCount: res.data.completedCount, 
-              cuurentCount: res.data.cuurentCount, 
-              totalCount: res.data.totalCount
+              completedCount: res.data.completedCount,
+              cuurentCount: res.data.cuurentCount,
+              totalCount: res.data.totalCount,
             });
             setLoader({
               open: false,
@@ -122,7 +125,7 @@ const Home = ({ navigation }) => {
       80 // quality
     );
     const formData = new FormData();
-    formData.append("docType", 'imageGallery');
+    formData.append("docType", "imageGallery");
     formData.append("project_id", null);
     formData.append("user_id", user?.id);
     formData.append("GPSLatitude", coords.latitude);
@@ -133,20 +136,14 @@ const Home = ({ navigation }) => {
       type: img.type,
       name: img.fileName,
     });
-    // formData.append("thumb", {
-    //   uri: resizedImage.uri,
-    //   type: img.type,
-    //   name: img.fileName,
-    // });
 
     var api = `${config.API_BASE_URL}/uploadFileMob`;
     axios
-      .post(api, formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+      .post(api, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((res) => {
         console.log("Image uploaded successfully:", res.data);
         Alert.alert("Success", "Gallery Image Uploaded Successfully", [
@@ -218,32 +215,37 @@ const Home = ({ navigation }) => {
 
       <Card containerStyle={{ margin: 0 }}>
         <View style={styles.boxContainer}>
-          <View style={styles.box}>
-            <Pressable onPress={() => openCamera()}>
-              <Icon
-                name="camera"
-                size={60}
-                color={"white"}
-                style={{ textAlign: "center" }}
-              />
-              <Text style={{ textAlign: "center", color: "white" }}>
-                Open Camera
-              </Text>
-            </Pressable>
-          </View>
-          <View style={styles.box}>
-            <Pressable onPress={() => navigation.navigate("Gallery")}>
-              <MaterialCommunityIcons
-                name="image-multiple-outline"
-                size={60}
-                color={"white"}
-                style={{ textAlign: "center" }}
-              />
-              <Text style={{ textAlign: "center", color: "white" }}>
-                Open Gallery
-              </Text>
-            </Pressable>
-          </View>
+          <Pressable
+            onPress={() => openCamera()}
+            style={({ pressed }) => [
+              styles.premiumBox,
+              pressed && { transform: [{ scale: 0.96 }] },
+            ]}
+          >
+            <Icon
+              name="camera"
+              size={65}
+              color={"white"}
+              style={{ textAlign: "center" }}
+            />
+            <Text style={styles.boxText}>Open Camera</Text>
+          </Pressable>
+
+          <Pressable
+            onPress={() => navigation.navigate("Gallery")}
+            style={({ pressed }) => [
+              styles.premiumBox,
+              pressed && { transform: [{ scale: 0.96 }] },
+            ]}
+          >
+            <MaterialCommunityIcons
+              name="image-multiple-outline"
+              size={65}
+              color={"white"}
+              style={{ textAlign: "center" }}
+            />
+            <Text style={styles.boxText}>Open Gallery</Text>
+          </Pressable>
         </View>
       </Card>
 
@@ -365,6 +367,35 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+
+  boxContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 10,
+  },
+  premiumBox: {
+    width: "48%",
+    height: 170,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#4A90E2",
+    // Gradient effect substitute
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 6,
+    elevation: 8, // Android shadow
+  },
+  boxText: {
+    textAlign: "center",
+    color: "white",
+    marginTop: 8,
+    fontWeight: "600",
+    fontSize: 16,
+    letterSpacing: 0.5,
+  },
+  
 });
 
 export default Home;

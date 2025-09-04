@@ -28,9 +28,9 @@ export default function Preview({ navigation }) {
       >
         <View style={styles.infoContainer}>
           {/* <Text style={styles.title}>{image.address}</Text> */}
-          <Text style={styles.description}>Latitude: {image.latitude}</Text>
-          <Text style={styles.description}>Longitude: {image.longitude}</Text>
-          <Text style={styles.description}>Address: {image.address}</Text>
+          <Text style={styles.description}>Latitude: {image.GPSLatitude}</Text>
+          <Text style={styles.description}>Longitude: {image.GPSLongitude}</Text>
+          <Text style={styles.description}>Address: {image.address || image.local_address}</Text>
         </View>
       </ImageBackground>
 
